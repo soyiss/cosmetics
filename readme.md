@@ -1,4 +1,4 @@
-<div style="text-align: center; font-size: x-large"> 프로젝트 기획안</div>
+## 프로젝트 기획안
 <br>
 <div style="text-align: right">
 작성일: 2023.05.17<br>
