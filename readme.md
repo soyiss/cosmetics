@@ -1,11 +1,11 @@
-# 프로젝트 기획안
-
---------
+<div style="text-align: center; font-size: x-large"> 프로젝트 기획안</div>
+<br>
+<div style="text-align: right">
 작성일: 2023.05.17<br>
 작성자: 하소이
+</div>
+
 ------
-
-
 + 프로젝트명: cosmetic shopping mall 
 
 
