@@ -3,6 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
+        <typeAlias type="com.icia.cosmetics.dto.MemberDTO" alias="member"></typeAlias>
+        <typeAlias type="com.icia.cosmetics.dto.BoardDTO" alias="board"></typeAlias>
+        <typeAlias type="com.icia.cosmetics.dto.MemberFileDTO" alias="memberFile"></typeAlias>
+        <typeAlias type="com.icia.cosmetics.dto.BoardFileDTO" alias="boardFile"></typeAlias>
+        <typeAlias type="com.icia.cosmetics.dto.CommentDTO" alias="comment"></typeAlias>
 
 
     </typeAliases>

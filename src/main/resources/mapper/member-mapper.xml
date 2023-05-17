@@ -4,5 +4,37 @@
 
 
 <mapper namespace="Member">
+    <insert id="save" parameterType="member" useGeneratedKeys="true" keyProperty="id">
+        insert into member_table(memberEmail,memberPassword,memberName,memberMobile,memberProfile)
+        values(#{memberEmail},#{memberPassword},#{memberName},#{memberMobile},#{memberProfile})
+    </insert>
 
+    <insert id="saveFile" parameterType="memberFile">
+        insert into member_file_table(originalFileName, storedFileName, memberId)
+        values (#{originalFileName}, #{storedFileName}, #{memberId})
+    </insert>
+
+    <select id="login" parameterType="member" resultType="member">
+        select * from member_table where memberEmail=#{memberEmail} and memberPassword=#{memberPassword}
+    </select>
+
+    <select id="findByMemberEmail" parameterType="String" resultType="member">
+        select * from member_table where memberEmail=#{memberEmail}
+    </select>
+
+    <update id="update" parameterType="member">
+        update member_table set memberPassword=#{memberPassword}, memberName=#{memberName}, memberMobile=#{memberMobile} where id=#{id}
+    </update>
+
+    <select id="findFile" parameterType="Long" resultType="memberFile">
+        select * from member_file_table where memberId=#{memberId}
+    </select>
+
+    <delete id="delete" parameterType="member">
+        delete from member_table where id =#{id}
+    </delete>
+
+    <select id="findAll" resultType="member">
+        select * from member_table
+    </select>
 </mapper>
