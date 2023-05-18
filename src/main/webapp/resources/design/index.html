@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,13 +7,25 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/e3b6bf5ae9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+
     <style>
+        @font-face {
+            font-family: 'MBC1961GulimM';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
         \* {
             box-sizing: border-box;
             margin: 0;
         }
 
         body{
+            /*font-family: 'Nanum Myeongjo', serif;*/
+            /*font-family: 'MBC1961GulimM';*/
             background-color: #f8f4e7;
         }
 
@@ -174,29 +187,31 @@
         </div>
         <br>
 
-        <ul>
-            <li>
-                <a href="#"> LOGIN /</a>
-            </li>
-            <li>
-                <a href="#">JOIN-US</a>
-            </li>
-            <br>
-            <li>
-                <a href="#">MY PAGE /</a>
-            </li>
-            <li>
-                <a href="#">CART</a>
-            </li>
+        <div class="cat">
+            <ul>
+                <li>
+                    <a href="#" style="font-size: 11px;"> LOGIN /</a>
+                </li>
+                <li>
+                    <a href="#" style="font-size: 11px;">JOIN-US</a>
+                </li>
+                <br>
+                <li>
+                    <a href="#" style="font-size: 11px;">MY PAGE /</a>
+                </li>
+                <li>
+                    <a href="#" style="font-size: 11px;">CART</a>
+                </li>
 
-        </ul>
+            </ul>
+        </div>
 
         <div class="select-icon">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" name="q" class="select-icon3" style="font-size: small">
             <input type="submit" value="검색" style="font-size: small">
         </div>
-        <br>
+        <br> <br>
 
         <div class="category">
             <a href="#"><strong>Best 10</strong></a>
@@ -271,16 +286,19 @@
                 </li>
             </ul>
 
-            <br>
+            <br><br>
+            <br><br>
+            <br><br>
+
             <ul>
                 <li style="display:block">
-                    <a href="#">묻고 답하기</a>
+                    <a href="#" style="font-size: 12px;">묻고 답하기</a>
                 </li>
                 <li style="display:block">
-                    <a href="#">공지사항</a>
+                    <a href="#" style="font-size: 12px;">공지사항</a>
                 </li>
                 <li style="display:block">
-                    <a href="#">고객후기</a>
+                    <a href="#" style="font-size: 12px;">고객후기</a>
                 </li>
             </ul>
         </div>
