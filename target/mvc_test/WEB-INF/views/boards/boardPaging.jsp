@@ -18,8 +18,10 @@
 <body>
 
 <%@include file="../conponent/header.jsp"%>
-<%@include file="../conponent/nav.jsp"%><br><br>
+<%@include file="../conponent/nav.jsp"%><br>
 <div id="section">
+  <p style="float: right"><strong>로그인을 하시면 글쓰기가 보입니다 ↑</strong></p>
+  <br><br>
   <div class="container" id="search-area">
     <%--    검색어는 보통 노출이 되니깐 get  --%>
     <form action="/board/paging" method="get">
