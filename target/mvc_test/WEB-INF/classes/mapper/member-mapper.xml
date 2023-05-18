@@ -5,8 +5,8 @@
 
 <mapper namespace="Member">
     <insert id="save" parameterType="member" useGeneratedKeys="true" keyProperty="id">
-        insert into member_table(memberEmail,memberPassword,memberName,memberMobile,memberProfile)
-        values(#{memberEmail},#{memberPassword},#{memberName},#{memberMobile},#{memberProfile})
+        insert into member_table(memberEmail,memberPassword,memberName,memberMobile,memberProfile,memberAddress)
+        values(#{memberEmail},#{memberPassword},#{memberName},#{memberMobile},#{memberProfile},#{memberAddress})
     </insert>
 
     <insert id="saveFile" parameterType="memberFile">
@@ -23,7 +23,7 @@
     </select>
 
     <update id="update" parameterType="member">
-        update member_table set memberPassword=#{memberPassword}, memberName=#{memberName}, memberMobile=#{memberMobile} where id=#{id}
+        update member_table set memberPassword=#{memberPassword}, memberName=#{memberName}, memberMobile=#{memberMobile},memberAddress=#{memberAddress} where id=#{id}
     </update>
 
     <select id="findFile" parameterType="Long" resultType="memberFile">

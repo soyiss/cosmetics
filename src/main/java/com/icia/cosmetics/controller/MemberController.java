@@ -28,7 +28,7 @@ public class MemberController {
 
     @PostMapping("/save")
     public String save(@ModelAttribute MemberDTO memberDTO) throws IOException {
-        System.out.println("memberDTO = " + memberDTO);
+        System.out.println("주소주소 memberDTO = " + memberDTO);
         memberService.save(memberDTO);
         return "/membership/success";
     }
@@ -96,6 +96,7 @@ public class MemberController {
 
     @PostMapping("/update")
     public String update(@ModelAttribute MemberDTO memberDTO){
+        System.out.println("88888memberDTO = " + memberDTO);
         memberService.update(memberDTO);
         return "redirect:/";
     }

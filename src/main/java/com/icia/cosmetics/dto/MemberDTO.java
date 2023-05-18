@@ -17,4 +17,6 @@ public class MemberDTO {
     private int memberProfile;
 
     private MultipartFile memberFile;
+
+    private String memberAddress;
 }

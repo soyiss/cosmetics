@@ -7,5 +7,5 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div id="header">
-    <h1>Spring Framework MemberShip Board Project</h1>
+    <h1>Spring Framework COSMETICS Project</h1>
 </div>

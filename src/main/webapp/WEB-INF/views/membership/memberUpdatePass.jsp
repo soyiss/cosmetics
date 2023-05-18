@@ -20,6 +20,7 @@
   <form action="/member/updatePass" method="post" name="updateForm">
   <input type="text" name="memberPassword" id="memberPassword" placeholder="현재 비밀번호를 입력해주세요">
   <input type="button" onclick="pass_check()" value="비밀번호 확인">
+  </form>
 </div>
 
 <%@include file="../conponent/footer.jsp"%>

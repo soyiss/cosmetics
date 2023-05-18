@@ -10,7 +10,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>COSMETICS</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <%--    <script src="../js/bootstrap.bundle.min.js"></script>--%>
@@ -216,9 +216,10 @@
                     <li>
                         <a href="/member/myPage?loginEmail=${sessionScope.loginEmail}" style="font-size: 11px;">MY PAGE /</a>
                     </li>
-                    <li><a href="/member/logout" style="font-size: 11px;">LOGOUT /</a></li>
+                    <li><a href="/member/logout" style="font-size: 11px;">LOGOUT </a></li>
+                    <br>
                     <li>
-                        <a href="#" style="font-size: 11px;">CART</a>
+                        <a href="#" style="font-size: 11px;">CART </a>
                     </li>
 
                 </c:when>
@@ -229,7 +230,7 @@
                 </c:otherwise>
             </c:choose>
             <c:if test="${sessionScope.loginEmail == 'admin'}">
-                <li> <a href="/member/manager" style="font-size: 11px;">manager /</a> </li>
+                <li> <a href="/member/manager" style="font-size: 11px;">/ manager /</a> </li>
                 <li> <a href="/board/boardList" class="left1" style="font-size: 11px;">M-List</a></li>
             </c:if>
 

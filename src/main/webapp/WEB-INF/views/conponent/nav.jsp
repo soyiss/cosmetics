@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script src="https://kit.fontawesome.com/e3b6bf5ae9.js" crossorigin="anonymous"></script>
 <div id="nav">
     <ul>
         <li>
-            <a href="/">
-                <i class="bi bi-house"></i>
+            <a href="/" style="margin-top: 5px">
+                <i class="fa-solid fa-house" style="color: #ffffff;"></i>
             </a>
         </li>
         <li>

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/resources/css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+<%--  <script src="https://kit.fontawesome.com/e3b6bf5ae9.js" crossorigin="anonymous"></script>--%>
 </head>
 <body>
 
