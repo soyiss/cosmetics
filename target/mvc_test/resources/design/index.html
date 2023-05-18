@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/e3b6bf5ae9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        \* {
+            box-sizing: border-box;
+            margin: auto;
+            height: auto;
+        }
+        .sidebar {
+            background-color: #fcf6f6;
+            width: 350px;
+            height: 100%;
+            /*
+            position: fixed;는 사이드바를 페이지 내에서 고정 위치로 설정합니다. 따라서 스크롤이 움직여도 사이드바는 항상 고정된 위치에 있게 됩니다.
+            */
+            position: fixed;
+            /*
+            left: 0;는 사이드바를 페이지의 왼쪽 가장자리에 위치시킵니다. 따라서 사이드바는 페이지 왼쪽에서 시작하여 너비를 차지하게 됩니다.
+            */
+            left: 0;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            color: #000;
+            /*
+            a링크 밑줄 없애기
+            */
+            text-decoration: none;
+        }
+
+        .sidebar a.active {
+            font-weight: bold;
+        }
+        .logo{
+            text-align: center;
+        }
+        .logo img{
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+        }
+        ul {
+            text-align: center;
+
+            padding-left: 0px;
+
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        ul li a{
+            font-size: 15px;
+        }
+
+        .select-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .select-icon i{
+            padding-right: 10px;
+        }
+
+        .select-icon .select-icon3{
+            margin-right: 2px;
+        }
+
+        .category{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <a href="#" class="active"><img src="../image/속눈썹.png" alt="cosmetic 임시로고(바꿀예정)_"></a>
+    </div>
+    <br>
+
+    <ul>
+        <li>
+            <a href="#"> LOGIN /</a>
+        </li>
+        <li>
+            <a href="#">JOIN-US</a>
+        </li><br>
+        <li>
+            <a href="#">MY PAGE /</a>
+        </li>
+        <li>
+            <a href="#">CART</a>
+        </li>
+
+    </ul>
+
+    <div class="select-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="q" class="select-icon3" style="font-size: small">
+        <input type="submit" value="검색" style="font-size: small">
+    </div><br>
+
+    <div class="category">
+        <a href="#"><strong>Best 10</strong></a>
+        <br>
+        <strong>SKIN</strong><br><br>
+        <a href="#">토너</a>
+        <a href="#">로션</a>
+        <a href="#">크림</a>
+        <br>
+        <strong>FACE</strong><br><br>
+        <a href="#">파운데이션</a>
+        <a href="#">쿠션</a>
+        <a href="#">파우더</a>
+        <a href="#">컨실러</a>
+        <br>
+        <strong>LIP</strong><br><br>
+        <a href="#">립스틱</a>
+        <a href="#">틴트</a>
+        <br>
+        <strong>EYE</strong><br><br>
+        <a href="#">섀도우</a>
+        <a href="#">아이라이너</a>
+        <a href="#">아이브로우</a>
+        <br>
+        <ul>
+            <li style="display:block">
+                <a href="#">묻고 답하기</a>
+            </li>
+            <li style="display:block">
+                <a href="#">공지사항</a>
+            </li>
+            <li style="display:block">
+                <a href="#">고객후기</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+</div>
+
+<!--<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">-->
+<!--    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">-->
+<!--        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>-->
+<!--        <span class="fs-4">cosmetics</span>-->
+<!--    </a>-->
+<!--    <br>-->
+<!--    <ul class="nav nav-pills flex-column mb-auto">-->
+<!--        <li class="nav-item">-->
+<!--            <a href="#" class="nav-link active" aria-current="page">-->
+<!--                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>-->
+<!--                Home-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#" class="nav-link link-dark">-->
+<!--                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>-->
+<!--                Dashboard-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#" class="nav-link link-dark">-->
+<!--                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>-->
+<!--                Orders-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#" class="nav-link link-dark">-->
+<!--                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>-->
+<!--                Products-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="#" class="nav-link link-dark">-->
+<!--                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>-->
+<!--                Customers-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--    <hr>-->
+<!--    <div class="dropdown">-->
+<!--        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">-->
+<!--            <strong>mdo</strong>-->
+<!--        </a>-->
+<!--        <ul class="dropdown-menu text-small shadow">-->
+<!--            <li><a class="dropdown-item" href="#">New project...</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Settings</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Profile</a></li>-->
+<!--            <li><hr class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="#">Sign out</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+
+</body>
+</html>
