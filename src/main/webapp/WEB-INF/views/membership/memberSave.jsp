@@ -174,20 +174,22 @@
         } else if (mobile_check()) {
             alert("전화번호를 다시입력해주세요");
             mobile.focus();
-        }else if(postcode.length < 8){
-            alert("주소를 다시입력해주세요");
-            postcode.focus();
+            // postcode, address, detailAddress, extraAddress는 입력란의 ID가 아니라 입력된 값 자체를 나타내므로
+            // postcode.focus(), address.focus(), detailAddress.focus(), extraAddress.focus()와 같은 코드는 잘못된 부분입니다.
+        }else if(postcode.length < 3){
+            alert("우편번호를 다시입력해주세요");
+            document.getElementById("sample6_postcode").focus();
         }
         else if(address.length < 5){
             alert("주소를 다시입력해주세요");
-            address.focus();
+            document.getElementById("sample6_address").focus();
         }else if(detailAddress.length < 3){
-            alert("주소를 다시입력해주세요");
-            detailAddress.focus();
+            alert("상세주소를 다시입력해주세요");
+            document.getElementById("sample6_detailAddress").focus();
         }
         else if(extraAddress.length < 1){
-            alert("주소를 다시입력해주세요");
-            extraAddress.focus();
+            alert("참고주소를 다시입력해주세요");
+            document.getElementById("sample6_extraAddress").focus();
         } else {
             saveForm.submit();
         }

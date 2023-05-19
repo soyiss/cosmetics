@@ -98,7 +98,7 @@ public class MemberController {
     public String update(@ModelAttribute MemberDTO memberDTO){
         System.out.println("88888memberDTO = " + memberDTO);
         memberService.update(memberDTO);
-        return "redirect:/";
+        return "redirect:/member/myPage";
     }
 
     @GetMapping("/logout")
