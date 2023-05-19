@@ -7,10 +7,7 @@ import com.icia.cosmetics.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -42,5 +39,11 @@ public class ProductController {
         return "/products/productList";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id")Long id){
+        ProductDTO productDTO = productService.findById(id);
+        productService.delete(productDTO);
+        return "redirect:/product/list";
+    }
 
 }

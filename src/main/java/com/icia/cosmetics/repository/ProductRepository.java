@@ -25,4 +25,12 @@ public class ProductRepository {
     public List<ProductDTO> findAll() {
        return sql.selectList("Product.findAll");
     }
+
+    public ProductDTO findById(Long id) {
+        return sql.selectOne("Product.findById",id);
+    }
+
+    public void delete(ProductDTO productDTO) {
+        sql.delete("Product.delete",productDTO);
+    }
 }

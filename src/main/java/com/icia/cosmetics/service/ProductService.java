@@ -66,4 +66,12 @@ public class ProductService {
     public List<ProductDTO> findAll() {
         return productRepository.findAll();
     }
+
+    public ProductDTO findById(Long id) {
+        return productRepository.findById(id);
+    }
+
+    public void delete(ProductDTO productDTO) {
+        productRepository.delete(productDTO);
+    }
 }

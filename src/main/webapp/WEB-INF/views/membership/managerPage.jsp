@@ -56,7 +56,12 @@
 </body>
 <script>
   const manager = (id) => {
-    location.href="/member/managerDelete?id="+id;
+    if(confirm("정말 삭제하시겠습니까?")){
+      location.href="/member/managerDelete?id="+id;
+    }else {
+      location.reload();
+    }
+
 
   }
 </script>
