@@ -74,4 +74,8 @@ public class ProductService {
     public void delete(ProductDTO productDTO) {
         productRepository.delete(productDTO);
     }
+
+    public void update(ProductDTO productDTO) {
+        productRepository.update(productDTO);
+    }
 }

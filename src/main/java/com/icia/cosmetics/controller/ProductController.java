@@ -39,6 +39,22 @@ public class ProductController {
         return "/products/productList";
     }
 
+    @GetMapping("/update")
+    public String updateForm(@RequestParam("id")Long id,Model model){
+        ProductDTO productDTO = productService.findById(id);
+        model.addAttribute("product",productDTO);
+        return "/products/productUpdate";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute ProductDTO productDTO) {
+        System.out.println("9999 productDTO = " + productDTO);
+        productService.update(productDTO);
+        System.out.println("10 10 10 productDTO = " + productDTO);
+        return "redirect:/product/list";
+    }
+
+
     @GetMapping("/delete")
     public String delete(@RequestParam("id")Long id){
         ProductDTO productDTO = productService.findById(id);

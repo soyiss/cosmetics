@@ -33,4 +33,8 @@ public class ProductRepository {
     public void delete(ProductDTO productDTO) {
         sql.delete("Product.delete",productDTO);
     }
+
+    public void update(ProductDTO productDTO) {
+        sql.update("Product.update",productDTO);
+    }
 }

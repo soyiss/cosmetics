@@ -49,7 +49,7 @@
                 <td>${product.productQu}</td>
                 <td>${product.productContents}</td>
                 <td>${product.fileAttached}</td>
-                <td><button onclick="product_update()">수정</button></td>
+                <td><button onclick="product_update('${product.id}')">수정</button></td>
                 <td><button onclick="product_delete('${product.id}')">삭제</button></td>
 
             </tr>
@@ -61,8 +61,8 @@
 
 </body>
 <script>
-    const product_update = () => {
-
+    const product_update = (id) => {
+        location.href="/product/update?id="+id;
     }
 
     const product_delete = (id) => {

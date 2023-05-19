@@ -24,4 +24,9 @@
     <delete id="delete" parameterType="product">
         delete from product_table where id = #{id}
     </delete>
+    <update id="update" parameterType="product">
+        update product_table set productName = #{productName},productPrice = #{productPrice},productQu = #{productQu}, productContents = #{productContents}
+        where id=#{id}
+    </update>
+
 </mapper>
