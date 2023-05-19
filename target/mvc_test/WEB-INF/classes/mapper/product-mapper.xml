@@ -5,13 +5,17 @@
 
 <mapper namespace="Product">
 
-    <insert id="save" parameterType="product">
-        insert into product_table(productName, productPrice, productQu, productContents)
-        values (#{productName}, #{productPrice}, #{productQu}, #{productContents})
+    <insert id="save" parameterType="product" useGeneratedKeys="true" keyProperty="id">
+        insert into product_table(productName, productPrice, productQu, productContents, fileAttached)
+        values (#{productName}, #{productPrice}, #{productQu}, #{productContents},#{fileAttached})
     </insert>
 
-<!--    <insert id="saveFile" parameterType="productFile">-->
-<!--        insert into product_file_table(originalFileName, storedFileName, productId)-->
-<!--        values (#{originalFileName}, #{storedFileName}, #{productId})-->
-<!--    </insert>-->
+    <insert id="saveFile" parameterType="productFile">
+        insert into product_file_table(originalFileName, storedFileName, productId)
+        values (#{originalFileName}, #{storedFileName}, #{productId})
+    </insert>
+
+    <select id="findAll" resultType="product">
+        select * from product_table;
+    </select>
 </mapper>

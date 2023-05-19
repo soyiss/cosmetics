@@ -18,7 +18,7 @@
 <%@include file="../conponent/nav.jsp"%><br>
 <div id="section">
 
-  <form action="/product/save" method="post"><br>
+  <form action="/product/save" method="post" enctype="multipart/form-data"><br>
     상품명<br><input type="text" name="productName"><br>
     <p></p>
     상품가격<br><input type="text" name="productPrice"><br>
@@ -27,8 +27,8 @@
     <p></p>
     상품설명<br><textarea type="text" name="productContents" maxlength=500></textarea><br>
     <p></p>
-<%--    이미지 파일<input type="file" name="boardFile" multiple> <br>--%>
-<%--    <p></p>--%>
+    이미지 파일<input type="file" name="productFile" multiple> <br>
+    <p></p>
     <input type="submit" value="상품등록">
   </form>
 </div>

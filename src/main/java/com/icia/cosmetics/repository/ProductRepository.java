@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class ProductRepository {
     @Autowired
@@ -16,7 +18,11 @@ public class ProductRepository {
         return productDTO;
     }
 
-//    public void saveFile(ProductFileDTO productFileDTO) {
-//        sql.insert("Product.saveFile",productFileDTO);
-//    }
+    public void saveFile(ProductFileDTO productFileDTO) {
+        sql.insert("Product.saveFile",productFileDTO);
+    }
+
+    public List<ProductDTO> findAll() {
+       return sql.selectList("Product.findAll");
+    }
 }

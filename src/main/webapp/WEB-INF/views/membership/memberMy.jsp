@@ -96,7 +96,7 @@
   }
   
   const product_list = () => {
-    
+    location.href = "/product/list";
   }
 
 
