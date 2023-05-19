@@ -50,22 +50,31 @@
       </c:if>
     </div>
 
+    <c:choose>
+      <c:when test="${sessionScope.loginEmail != 'admin'}">
+        <h2>${member.memberName}님</h2>
+        <h5>${sessionScope.loginEmail}</h5>
+        <br>
+        <hr/>
+        <br>
+        <h4><i class="fa-solid fa-mobile-screen" style="color: #adadad;"></i> ${member.memberMobile}</h4>
+        <br>
+        <hr/>
+        <br>
+        <h4><i class="fa-solid fa-location-dot" style="color: #adadad;"></i> ${member.memberAddress}</h4><br>
+        <button onclick="update()">회원정보수정</button>
+        <button onclick="member_delete()">회원탈퇴</button>
+      </c:when>
+      <c:when test="${sessionScope.loginEmail == 'admin'}">
+        <h2>${member.memberName}</h2>
+        <br>
+        <hr/>
+        <br>
+        <button onclick="product_save()">상품등록</button>
+        <button onclick="product_list()">상품 리스트</button>
+      </c:when>
 
-    <c:if test="${sessionScope.loginEmail != 'admin'}">
-      <h2>${member.memberName}님</h2>
-      <h5>${sessionScope.loginEmail}</h5>
-      <br>
-      <hr/>
-      <br>
-      <h4><i class="fa-solid fa-mobile-screen" style="color: #adadad;"></i> ${member.memberMobile}</h4>
-      <br>
-      <hr/>
-      <br>
-      <h4><i class="fa-solid fa-location-dot" style="color: #adadad;"></i> ${member.memberAddress}</h4><br>
-      <button onclick="update()">회원정보수정</button>
-      <button onclick="member_delete()">회원탈퇴</button>
-    </c:if>
-
+    </c:choose>
 
   </div>
 </div>
@@ -80,6 +89,14 @@
 
   const member_delete = () => {
     location.href = "/member/deletePass";
+  }
+  
+  const product_save = () => {
+      location.href = "/product/save";
+  }
+  
+  const product_list = () => {
+    
   }
 
 

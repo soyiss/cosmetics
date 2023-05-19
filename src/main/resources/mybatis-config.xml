@@ -8,7 +8,8 @@
         <typeAlias type="com.icia.cosmetics.dto.MemberFileDTO" alias="memberFile"></typeAlias>
         <typeAlias type="com.icia.cosmetics.dto.BoardFileDTO" alias="boardFile"></typeAlias>
         <typeAlias type="com.icia.cosmetics.dto.CommentDTO" alias="comment"></typeAlias>
-
+        <typeAlias type="com.icia.cosmetics.dto.ProductDTO" alias="product"></typeAlias>
+        <typeAlias type="com.icia.cosmetics.dto.ProductFileDTO" alias="productFile"></typeAlias>
 
     </typeAliases>
 </configuration>
