@@ -78,4 +78,8 @@ public class ProductService {
     public void update(ProductDTO productDTO) {
         productRepository.update(productDTO);
     }
+
+    public List<ProductFileDTO> findFile(Long id) {
+        return productRepository.findFile(id);
+    }
 }

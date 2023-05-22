@@ -1,8 +1,6 @@
 package com.icia.cosmetics.controller;
 
-import com.icia.cosmetics.dto.BoardDTO;
-import com.icia.cosmetics.dto.ProductDTO;
-import com.icia.cosmetics.dto.ProductFileDTO;
+import com.icia.cosmetics.dto.*;
 import com.icia.cosmetics.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,6 +58,24 @@ public class ProductController {
         ProductDTO productDTO = productService.findById(id);
         productService.delete(productDTO);
         return "redirect:/product/list";
+    }
+
+    @GetMapping("/detail")
+    public String detail(@RequestParam("id")Long id,Model model){
+        System.out.println("id = " + id);
+        ProductDTO productDTO = productService.findById(id);
+        System.out.println("호호 productDTO = " + productDTO);
+        model.addAttribute("product",productDTO);
+
+        if (productDTO.getFileAttached() == 1) {
+            // 파일이 있는 게시글을 선택하면
+            List<ProductFileDTO> productFileDTO = productService.findFile(id);
+            System.out.println("하하 productFileDTO = " + productFileDTO);
+            model.addAttribute("productFileList", productFileDTO);
+            System.out.println("productFileList = " + productFileDTO);
+        }
+
+        return "/products/productDetail";
     }
 
 }

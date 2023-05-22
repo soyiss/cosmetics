@@ -1,0 +1,138 @@
+\* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+
+    background-color: #f8f4e7;
+    overflow: hidden;
+}
+
+.sidebar {
+    /*background-color: #fcf6f6;*/
+    background-color: rgba(0, 0, 0, 0.05);
+    float: left;
+    width: 15%;
+    padding: 0 50px;
+    margin-top: 35px;
+    margin-left: 40px;
+    height: 100%;
+
+    /*
+    position: fixed;는 사이드바를 페이지 내에서 고정 위치로 설정합니다. 따라서 스크롤이 움직여도 사이드바는 항상 고정된 위치에 있게 됩니다.
+    */
+
+    /*position: fixed;*/
+    height: 90vh; /* Set height to 100% viewport height */
+    font-size: small;
+    overflow-y: hidden; /* Disable vertical scroll */
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+    /*
+    a링크 밑줄 없애기
+    */
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    font-weight: bold;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+ul {
+    text-align: center;
+
+    padding-left: 0px;
+
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+ul li a {
+    font-size: 15px;
+}
+
+.select-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-icon i {
+    padding-right: 10px;
+}
+
+.select-icon .select-icon3 {
+    margin-right: 2px;
+}
+
+.category {
+    text-align: center;
+}
+
+#check-btn, #check-btn1, #check-btn2, #check-btn3 {
+    display: none;
+}
+
+#check-btn:checked ~ .menubars, #check-btn1:checked ~ .menubars, #check-btn2:checked ~ .menubars, #check-btn3:checked ~ .menubars {
+    display: block;
+}
+
+.menubars {
+    display: none;
+}
+
+.menubars li {
+    display: block;
+}
+
+.menubars1 {
+    display: none;
+}
+
+.menubars1 li {
+    display: block;
+}
+
+.menubars2 {
+    display: none;
+}
+
+.menubars2 li {
+    display: block;
+}
+
+.menubars3 {
+    display: none;
+}
+
+.menubars3 li {
+    display: block;
+}
+
+.section {
+    float: left;
+    width: 70%;
+    height: 65vh; /* Set height to 100% viewport height */
+    margin-top: 30px;
+    height: auto;
+
+
+}

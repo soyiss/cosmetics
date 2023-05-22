@@ -13,49 +13,72 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="../../resources/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
     <style>
-        .save1{
+
+        .save1 {
             text-align: center;
+            margin-top: 20px;
+
+            /* grid 적용을 위해선 배치하려는 요소의 부모 요소에 grid를 지정해야된다 */
+            /* item의 부모요소는 container */
+
+        }
+
+
+        .save1 input[type="text"], input[type="button"] {
+            width: 35%;
+            margin: 0 auto;
         }
 
     </style>
 </head>
 <body>
 
-<%@include file="../conponent/header.jsp" %>
-<%@include file="../conponent/nav.jsp" %>
+<%--<%@include file="../conponent/header.jsp" %>--%>
+<%--<%@include file="../conponent/nav.jsp" %>--%>
+<%@include file="../conponent/sidebar.jsp" %>
 <br>
 
 <div id="section">
-
     <form action="/member/save" method="post" id="save-form" enctype="multipart/form-data">
         <div class="save1">
-            <input type="text" name="memberEmail" placeholder="이메일" id="member-email" onblur="email_check()"><br>
+            <h1>
+                <string>JOIN-US</string>
+            </h1>
+            <br>
+            <input type="text" name="memberEmail" class="form-control" placeholder="이메일" id="member-email"
+                   onblur="email_check()">
             <p id="check-result"></p>
-            <input type="text" name="memberPassword" placeholder="비밀번호" id="member-password"
-                   onblur="password_check()"><br>
+            <input type="text" name="memberPassword" class="form-control" placeholder="비밀번호" id="member-password"
+                   onblur="password_check()">
             <p id="pass-rule"></p>
-            <input type="text" name="memberName" id="member-name" placeholder="이름"><br>
+            <input type="text" name="memberName" class="form-control" id="member-name" placeholder="이름">
             <p></p>
-            <input type="text" name="memberMobile" placeholder="전화번호" id="member-mobile" onblur="mobile_check()"><br>
+            <input type="text" name="memberMobile" class="form-control" placeholder="전화번호" id="member-mobile"
+                   onblur="mobile_check()">
             <p id="mobile-rule"></p>
-
             <input type="hidden" name="memberAddress" id="memberAddress">
-
-            <input type="text" id="sample6_postcode" placeholder="우편번호">
-            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-            <input type="text" id="sample6_address" placeholder="주소"><br>
-            <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-            <input type="text" id="sample6_extraAddress" placeholder="참고항목"><br>
+            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" style="background-color: #e1e1ad;border: none">
+            <p></p>
+            <input type="text" id="sample6_postcode" class="form-control text-center" placeholder="우편번호">
+            <p></p>
+            <input type="text" id="sample6_address" class="form-control" placeholder="주소">
+            <p></p>
+            <input type="text" id="sample6_detailAddress" class="form-control" placeholder="상세주소">
+            <p></p>
+            <input type="text" id="sample6_extraAddress" class="form-control" placeholder="참고항목"><br>
 
             <input type="file" name="memberFile"> <br>
             <input type="submit" value="가입" onclick="member_address()">
         </div>
+
     </form>
 
 </div>
 
-<%@include file="../conponent/footer.jsp" %>
+<%--<%@include file="../conponent/footer.jsp" %>--%>
 </body>
 <script>
 
@@ -176,18 +199,16 @@
             mobile.focus();
             // postcode, address, detailAddress, extraAddress는 입력란의 ID가 아니라 입력된 값 자체를 나타내므로
             // postcode.focus(), address.focus(), detailAddress.focus(), extraAddress.focus()와 같은 코드는 잘못된 부분입니다.
-        }else if(postcode.length < 3){
+        } else if (postcode.length < 3) {
             alert("우편번호를 다시입력해주세요");
             document.getElementById("sample6_postcode").focus();
-        }
-        else if(address.length < 5){
+        } else if (address.length < 5) {
             alert("주소를 다시입력해주세요");
             document.getElementById("sample6_address").focus();
-        }else if(detailAddress.length < 3){
+        } else if (detailAddress.length < 3) {
             alert("상세주소를 다시입력해주세요");
             document.getElementById("sample6_detailAddress").focus();
-        }
-        else if(extraAddress.length < 1){
+        } else if (extraAddress.length < 1) {
             alert("참고주소를 다시입력해주세요");
             document.getElementById("sample6_extraAddress").focus();
         } else {
@@ -197,7 +218,7 @@
 
     function sample6_execDaumPostcode() {
         new daum.Postcode({
-            oncomplete: function(data) {
+            oncomplete: function (data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
                 // 각 주소의 노출 규칙에 따라 주소를 조합한다.
@@ -213,18 +234,18 @@
                 }
 
                 // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
+                if (data.userSelectedType === 'R') {
                     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
                     // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
                         extraAddr += data.bname;
                     }
                     // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                    if (data.buildingName !== '' && data.apartment === 'Y') {
                         extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                     }
                     // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
+                    if (extraAddr !== '') {
                         extraAddr = ' (' + extraAddr + ')';
                     }
                     // 조합된 참고항목을 해당 필드에 넣는다.

@@ -23,7 +23,7 @@ public class ProductRepository {
     }
 
     public List<ProductDTO> findAll() {
-       return sql.selectList("Product.findAll");
+        return sql.selectList("Product.findAll");
     }
 
     public ProductDTO findById(Long id) {
@@ -36,5 +36,9 @@ public class ProductRepository {
 
     public void update(ProductDTO productDTO) {
         sql.update("Product.update",productDTO);
+    }
+
+    public List<ProductFileDTO> findFile(Long productId) {
+        return sql.selectList("Product.findFile",productId);
     }
 }

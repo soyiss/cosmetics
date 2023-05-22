@@ -65,6 +65,8 @@
         <button onclick="update()">회원정보수정</button>
         <button onclick="member_delete()">회원탈퇴</button>
       </c:when>
+
+
       <c:when test="${sessionScope.loginEmail == 'admin'}">
         <h2>${member.memberName}</h2>
         <br>
@@ -72,6 +74,10 @@
         <br>
         <button onclick="product_save()">상품등록</button>
         <button onclick="product_list()">상품 리스트</button>
+        <button onclick="M_list()">회원 리스트</button>
+        <button onclick="W_list()">글 리스트</button>
+        <%--        <a href="/member/manager">회원 리스트</a>--%>
+        <%--        <a href="/board/boardList" class="left1">글 리스트</a>--%>
       </c:when>
 
     </c:choose>
@@ -90,15 +96,21 @@
   const member_delete = () => {
     location.href = "/member/deletePass";
   }
-  
+
   const product_save = () => {
-      location.href = "/product/save";
+    location.href = "/product/save";
   }
-  
+
   const product_list = () => {
     location.href = "/product/list";
   }
 
+  const M_list = () => {
+    location.href = "/member/manager";
+  }
+  const W_list = () => {
+    location.href = "/board/boardList";
+  }
 
 </script>
 </html>
