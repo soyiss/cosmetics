@@ -13,46 +13,110 @@
     <link rel="stylesheet" href="/resources/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* 중앙 정렬 */
+            gap: 10px; /* 카드 간격 조정 */
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
 <%@include file="../conponent/header.jsp" %>
 <%@include file="../conponent/nav.jsp" %>
 <br>
 <div id="section">
-    <div class="container" id="list">
-        <table>
-            <tr>
-                <th>상품번호</th>
-                <th>상품명</th>
-                <th>상품가격</th>
-                <th>상품수량</th>
-                <th>상품설명</th>
-
-
-            </tr>
-            <c:forEach items="${productList}" var="product">
-                <tr>
-                    <td>${product.id}</td>
-                    <td>
-                            ${product.productName}
-                    </td>
-                    <td>${product.productPrice}</td>
-                    <td>${product.productQu}</td>
-                    <td>${product.productContents}</td>
-                </tr>
+    <div class="card-container">
+        <c:forEach items="${productList}" var="product">
+            <div class="card" style="flex: 1; margin: 10px;">
                 <c:if test="${product.fileAttached == 1}">
-                    <tr>
-                        <th>image</th>
-                        <td>
-                                <%--    ${pageContext.request.contextPath}는 현재 프로젝트의 경로에 접근한다(그냥 기본적으로 써야되는 식이다)            --%>
-                                <img src="${pageContext.request.contextPath}/upload/${product.storedFileName}"
-                                     width="100" height="100">
-                        </td>
-                    </tr>
+                    <img src="${pageContext.request.contextPath}/upload/${product.storedFileName}" width="100" height="100">
                 </c:if>
-            </c:forEach>
+                <h1>${product.productName}</h1>
+                <p class="price">${String.format("%,d", product.productPrice)}원</p>
+                <p>${product.productContents}</p>
+                <p><button>Detail Click</button></p>
+            </div>
+        </c:forEach>
+    </div>
 
-        </table>
+
+<%--        <table>--%>
+        <%--            <tr>--%>
+        <%--                <th>상품번호</th>--%>
+        <%--                <th>상품명</th>--%>
+        <%--                <th>상품가격</th>--%>
+        <%--                <th>상품수량</th>--%>
+        <%--                <th>상품설명</th>--%>
+
+
+        <%--            </tr>--%>
+        <%--            <c:forEach items="${productList}" var="product">--%>
+        <%--                <tr>--%>
+        <%--                    <td>${product.id}</td>--%>
+        <%--                    <td>--%>
+        <%--                            ${product.productName}--%>
+        <%--                    </td>--%>
+        <%--                    <td>${product.productPrice}</td>--%>
+        <%--                    <td>${product.productQu}</td>--%>
+        <%--                    <td>${product.productContents}</td>--%>
+        <%--                </tr>--%>
+        <%--                <c:if test="${product.fileAttached == 1}">--%>
+        <%--                    <tr>--%>
+        <%--                        <th>image</th>--%>
+        <%--                        <td>--%>
+        <%--                                &lt;%&ndash;    ${pageContext.request.contextPath}는 현재 프로젝트의 경로에 접근한다(그냥 기본적으로 써야되는 식이다)            &ndash;%&gt;--%>
+        <%--                                <img src="${pageContext.request.contextPath}/upload/${product.storedFileName}"--%>
+        <%--                                     width="100" height="100">--%>
+        <%--                        </td>--%>
+        <%--                    </tr>--%>
+        <%--                </c:if>--%>
+        <%--            </c:forEach>--%>
+
+        <%--        </table>--%>
     </div>
     <br>
     <div class="container">
