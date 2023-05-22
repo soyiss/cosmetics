@@ -30,6 +30,8 @@
 <%@include file="../conponent/header.jsp"%>
 <%@include file="../conponent/nav.jsp"%><br>
 <div id="section">
+
+    <p>상품번호를 누르시면 저장된 첨부파일이 보입니다</p>
     <table>
         <tr>
             <th>상품번호</th>
@@ -44,7 +46,7 @@
         <c:forEach items="${productList}" var="product">
             <tr>
                 <td>
-                    <a href="/product/detail?id=${product.id}}"> ${product.id}</a>
+                    <a href="/product/detail?id=${product.id}"> ${product.id}</a>
                 </td>
                 <td>${product.productName}</td>
                 <td>${product.productPrice}</td>

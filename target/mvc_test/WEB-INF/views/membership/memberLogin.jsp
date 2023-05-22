@@ -13,26 +13,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <style>
-      .memberLogin1{
-       text-align: center;
-      }
+        .memberLogin1{
+            text-align: center;
+            margin-top: 10%;
+        }
 
     </style>
 </head>
 <body>
 
-<%@include file="../conponent/header.jsp" %>
-<%@include file="../conponent/nav.jsp" %>
+<%--<%@include file="../conponent/header.jsp" %>--%>
+<%--<%@include file="../conponent/nav.jsp" %>--%>
+<%@include file="../conponent/sidebar.jsp" %>
 <br>
-<div id="section">
+<div id="section" class="container">
 
     <form action="/member/login" method="post" id="save-form">
         <div class="memberLogin1">
-            <input type="text" name="memberEmail" id="member-email" placeholder="이메일"><br>
+            <h1><string>LOGIN</string></h1>
+            <br>
+            <br>
+            <input type="text" name="memberEmail" id="member-email" placeholder="이메일" size="30"><br>
             <p></p>
-            <input type="text" name="memberPassword" id="member-password" placeholder="비밀번호"><br>
+            <input type="text" name="memberPassword" id="member-password" placeholder="비밀번호" size="30"><br>
             <p></p>
-            <input type="submit" value="login">
+            <input type="submit" value="로그인">
         </div>
     </form>
 </div>

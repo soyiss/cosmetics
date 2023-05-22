@@ -21,103 +21,94 @@
     <script src="https://kit.fontawesome.com/e3b6bf5ae9.js" crossorigin="anonymous"></script>
 
     <style>
-        @font-face {
-            font-family: 'MBC1961GulimM';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
 
-        @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+        /*        \* {*/
+        /*            box-sizing: border-box;*/
+        /*            margin: 0;*/
+        /*        }*/
 
-        \* {
-            box-sizing: border-box;
-            margin: 0;
-        }
+        /*        body {*/
+        /*           */
+        /*            background-color: #f8f4e7;*/
+        /*        }*/
 
-        body {
-            /*font-family: 'Nanum Myeongjo', serif;*/
-            /*font-family: 'MBC1961GulimM';*/
-            background-color: #f8f4e7;
-        }
+        /*        .sidebar {*/
+        /*            !*background-color: #fcf6f6;*!*/
+        /*            background-color: rgba(0, 0, 0, 0.05);*/
+        /*            float: left;*/
+        /*            width: 15%;*/
+        /*            padding: 0 50px;*/
+        /*            margin-top: 35px;*/
+        /*            margin-left: 40px;*/
+        /*            height: 100%;*/
 
-        .sidebar {
-            /*background-color: #fcf6f6;*/
-            background-color: rgba(0, 0, 0, 0.05);
-            float: left;
-            width: 15%;
-            padding: 0 50px;
-            margin-top: 35px;
-            margin-left: 40px;
-            height: 100%;
+        /*            !**/
+        /*            position: fixed;는 사이드바를 페이지 내에서 고정 위치로 설정합니다. 따라서 스크롤이 움직여도 사이드바는 항상 고정된 위치에 있게 됩니다.*/
+        /*            *!*/
 
-            /*
-            position: fixed;는 사이드바를 페이지 내에서 고정 위치로 설정합니다. 따라서 스크롤이 움직여도 사이드바는 항상 고정된 위치에 있게 됩니다.
-            */
+        /*            !*position: fixed;*!*/
+        /*            height: 90vh; !* Set height to 100% viewport height *!*/
+        /*            font-size: small;*/
+        /*            overflow-y: hidden; !* Disable vertical scroll *!*/
+        /*        }*/
 
-            /*position: fixed;*/
-            height: 90vh; /* Set height to 100% viewport height */
-            font-size: small;
-            overflow-y: hidden; /* Disable vertical scroll */
-        }
+        /*        .sidebar a {*/
+        /*            display: block;*/
+        /*            margin-bottom: 10px;*/
+        /*            color: #000;*/
+        /*            !**/
+        /*            a링크 밑줄 없애기*/
+        /*            *!*/
+        /*            text-decoration: none;*/
+        /*        }*/
 
-        .sidebar a {
-            display: block;
-            margin-bottom: 10px;
-            color: #000;
-            /*
-            a링크 밑줄 없애기
-            */
-            text-decoration: none;
-        }
+        /*        .sidebar a.active {*/
+        /*            font-weight: bold;*/
+        /*        }*/
 
-        .sidebar a.active {
-            font-weight: bold;
-        }
+        /*        .logo {*/
+        /*            text-align: center;*/
+        /*        }*/
 
-        .logo {
-            text-align: center;
-        }
+        /*        .logo img {*/
+        /*            margin-top: 50px;*/
+        /*            width: 100px;*/
+        /*            height: 100px;*/
+        /*        }*/
 
-        .logo img {
-            margin-top: 50px;
-            width: 100px;
-            height: 100px;
-        }
+        /*        ul {*/
+        /*            text-align: center;*/
 
-        ul {
-            text-align: center;
+        /*            padding-left: 0px;*/
 
-            padding-left: 0px;
+        /*        }*/
 
-        }
+        /*        li {*/
+        /*            list-style: none;*/
+        /*            display: inline-block;*/
+        /*        }*/
 
-        li {
-            list-style: none;
-            display: inline-block;
-        }
+        /*        ul li a {*/
+        /*            font-size: 15px;*/
+        /*        }*/
 
-        ul li a {
-            font-size: 15px;
-        }
+        /*        .select-icon {*/
+        /*            display: flex;*/
+        /*            justify-content: center;*/
+        /*            align-items: center;*/
+        /*        }*/
 
-        .select-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        /*        .select-icon i {*/
+        /*            padding-right: 10px;*/
+        /*        }*/
 
-        .select-icon i {
-            padding-right: 10px;
-        }
+        /*        .select-icon .select-icon3 {*/
+        /*            margin-right: 2px;*/
+        /*        }*/
 
-        .select-icon .select-icon3 {
-            margin-right: 2px;
-        }
-
-        .category {
-            text-align: center;
-        }
+        /*        .category {*/
+        /*            text-align: center;*/
+        /*        }*/
 
 
         .carousel {
@@ -147,45 +138,45 @@
 
         }
 
-        #check-btn, #check-btn1, #check-btn2, #check-btn3 {
-            display: none;
-        }
+        <%--    #check-btn, #check-btn1, #check-btn2, #check-btn3 {--%>
+        <%--        display: none;--%>
+        <%--    }--%>
 
-        #check-btn:checked ~ .menubars, #check-btn1:checked ~ .menubars, #check-btn2:checked ~ .menubars, #check-btn3:checked ~ .menubars {
-            display: block;
-        }
+        <%--    #check-btn:checked ~ .menubars, #check-btn1:checked ~ .menubars, #check-btn2:checked ~ .menubars, #check-btn3:checked ~ .menubars {--%>
+        <%--        display: block;--%>
+        <%--    }--%>
 
-        .menubars {
-            display: none;
-        }
+        <%--    .menubars {--%>
+        <%--        display: none;--%>
+        <%--    }--%>
 
-        .menubars li {
-            display: block;
-        }
+        <%--    .menubars li {--%>
+        <%--        display: block;--%>
+        <%--    }--%>
 
-        .menubars1 {
-            display: none;
-        }
+        <%--    .menubars1 {--%>
+        <%--        display: none;--%>
+        <%--    }--%>
 
-        .menubars1 li {
-            display: block;
-        }
+        <%--    .menubars1 li {--%>
+        <%--        display: block;--%>
+        <%--    }--%>
 
-        .menubars2 {
-            display: none;
-        }
+        <%--    .menubars2 {--%>
+        <%--        display: none;--%>
+        <%--    }--%>
 
-        .menubars2 li {
-            display: block;
-        }
+        <%--    .menubars2 li {--%>
+        <%--        display: block;--%>
+        <%--    }--%>
 
-        .menubars3 {
-            display: none;
-        }
+        <%--    .menubars3 {--%>
+        <%--        display: none;--%>
+        <%--    }--%>
 
-        .menubars3 li {
-            display: block;
-        }
+        <%--    .menubars3 li {--%>
+        <%--        display: block;--%>
+        <%--    }--%>
 
 
     </style>
@@ -193,149 +184,149 @@
 <body>
 
 
-<div class="sidebar">
-    <div class="logo">
-        <a href="#" class="active"><img src="../../resources/image/속눈썹.png" alt="cosmetic 임시로고(바꿀예정)_"></a>
-    </div>
-    <br>
+<%--<div class="sidebar">--%>
+<%--    <div class="logo">--%>
+<%--        <a href="#" class="active"><img src="../../resources/image/속눈썹.png" alt="cosmetic 임시로고(바꿀예정)_"></a>--%>
+<%--    </div>--%>
+<%--    <br>--%>
 
-    <div class="cat">
-        <ul>
+<%--    <div class="cat">--%>
+<%--        <ul>--%>
+<%--&lt;%&ndash;            <li>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <a href="/member/login" style="font-size: 11px;"> LOGIN /</a>&ndash;%&gt;--%>
+<%--&lt;%&ndash;            </li>&ndash;%&gt;--%>
+<%--&lt;%&ndash;            <li>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <a href="/member/save" style="font-size: 11px;">JOIN-US /</a>&ndash;%&gt;--%>
+<%--&lt;%&ndash;            </li>&ndash;%&gt;--%>
+<%--            &lt;%&ndash;            <br>&ndash;%&gt;--%>
+<%--            &lt;%&ndash;            <li>&ndash;%&gt;--%>
+<%--            &lt;%&ndash;                <a href="/member/myPage?loginEmail=${sessionScope.loginEmail}" style="font-size: 11px;">MY PAGE /</a>&ndash;%&gt;--%>
+<%--            &lt;%&ndash;            </li>&ndash;%&gt;--%>
+<%--            <c:choose>--%>
+<%--                <c:when test="${sessionScope.loginEmail != null}">--%>
+<%--                    <li>--%>
+<%--                        <a href="/member/myPage?loginEmail=${sessionScope.loginEmail}" style="font-size: 11px;">MY PAGE /</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a href="/member/logout" style="font-size: 11px;">LOGOUT </a></li>--%>
+<%--                    <br>--%>
+<%--                    <li>--%>
+<%--                        <a href="#" style="font-size: 11px;">CART </a>--%>
+<%--                    </li>--%>
+
+<%--                </c:when>--%>
+<%--                <c:otherwise>--%>
+<%--                    <li><a href="/member/login" style="font-size: 11px;">LOGIN /</a></li>--%>
+<%--                    <li> <a href="/member/save" style="font-size: 11px;">JOIN-US </a></li>--%>
+
+<%--                </c:otherwise>--%>
+<%--            </c:choose>--%>
+<%--&lt;%&ndash;            <c:if test="${sessionScope.loginEmail == 'admin'}">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <li> <a href="/member/manager" style="font-size: 11px;">/ manager /</a> </li>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <li> <a href="/board/boardList" class="left1" style="font-size: 11px;">M-List</a></li>&ndash;%&gt;--%>
+<%--&lt;%&ndash;            </c:if>&ndash;%&gt;--%>
+
+<%--        </ul>--%>
+<%--    </div>--%>
+
+<%--    <div class="select-icon">--%>
+<%--        <i class="fa-solid fa-magnifying-glass"></i>--%>
+<%--        <input type="text" name="q" class="select-icon3" style="font-size: small">--%>
+<%--        <input type="submit" value="검색" style="font-size: small">--%>
+<%--    </div>--%>
+<%--    <br> <br>--%>
+
+<%--    <div class="category">--%>
+<%--        <a href="#"><strong>Best 10</strong></a>--%>
+<%--        <br>--%>
+
+<%--        <!--   크 박스를 설명하는 레이블 요소입니다. for 속성의 값으로 "check-btn"을 설정하여 체크 박스와 연결합니다.--%>
+<%--        이렇게 함으로써 체크 박스를 클릭하는 동작과 레이블을 클릭하는 동작이 서로 연결되어 동일한 동작을 수행하도록 할 수 있습니다.      -->--%>
+<%--        <input id="check-btn" type="checkbox"/>--%>
+<%--        <label for="check-btn"><strong>SKIN</strong></label>--%>
+<%--        <br>--%>
+<%--        <ul class="menubars">--%>
+<%--            <br>--%>
 <%--            <li>--%>
-<%--                <a href="/member/login" style="font-size: 11px;"> LOGIN /</a>--%>
+<%--                <a href="#">토너</a>--%>
 <%--            </li>--%>
 <%--            <li>--%>
-<%--                <a href="/member/save" style="font-size: 11px;">JOIN-US /</a>--%>
+<%--                <a href="#">로션</a>--%>
 <%--            </li>--%>
-            <%--            <br>--%>
-            <%--            <li>--%>
-            <%--                <a href="/member/myPage?loginEmail=${sessionScope.loginEmail}" style="font-size: 11px;">MY PAGE /</a>--%>
-            <%--            </li>--%>
-            <c:choose>
-                <c:when test="${sessionScope.loginEmail != null}">
-                    <li>
-                        <a href="/member/myPage?loginEmail=${sessionScope.loginEmail}" style="font-size: 11px;">MY PAGE /</a>
-                    </li>
-                    <li><a href="/member/logout" style="font-size: 11px;">LOGOUT </a></li>
-                    <br>
-                    <li>
-                        <a href="#" style="font-size: 11px;">CART </a>
-                    </li>
+<%--            <li>--%>
+<%--                <a href="#">크림</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
 
-                </c:when>
-                <c:otherwise>
-                    <li><a href="/member/login" style="font-size: 11px;">LOGIN /</a></li>
-                    <li> <a href="/member/save" style="font-size: 11px;">JOIN-US </a></li>
+<%--        <br>--%>
+<%--        <input id="check-btn1" type="checkbox"/>--%>
+<%--        <label for="check-btn1"><strong>FACE</strong></label>--%>
+<%--        <br>--%>
+<%--        <ul class="menubars1">--%>
+<%--            <br>--%>
+<%--            <li>--%>
+<%--                <a href="#">파운데이션</a>--%>
+<%--            </li>--%>
+<%--            <li>--%>
+<%--                <a href="#">쿠션</a>--%>
+<%--            </li>--%>
+<%--            <li>--%>
+<%--                <a href="#">파우더</a>--%>
+<%--            </li>--%>
+<%--            <li>--%>
+<%--                <a href="#">컨실러</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
 
-                </c:otherwise>
-            </c:choose>
-            <c:if test="${sessionScope.loginEmail == 'admin'}">
-                <li> <a href="/member/manager" style="font-size: 11px;">/ manager /</a> </li>
-                <li> <a href="/board/boardList" class="left1" style="font-size: 11px;">M-List</a></li>
-            </c:if>
+<%--        <br>--%>
+<%--        <input id="check-btn2" type="checkbox"/>--%>
+<%--        <label for="check-btn2"> <strong>LIP</strong></label>--%>
+<%--        <br>--%>
+<%--        <ul class="menubars2">--%>
+<%--            <br>--%>
+<%--            <li>--%>
+<%--                <a href="#">립스틱</a>--%>
+<%--            </li>--%>
+<%--            <li>--%>
+<%--                <a href="#">틴트</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
 
-        </ul>
-    </div>
+<%--        <br>--%>
+<%--        <input id="check-btn3" type="checkbox"/>--%>
+<%--        <label for="check-btn3"><strong>EYE</strong></label>--%>
+<%--        <br>--%>
+<%--        <ul class="menubars3">--%>
+<%--            <br>--%>
+<%--            <li>--%>
+<%--                <a href="#">섀도우</a>--%>
+<%--            </li>--%>
+<%--            <li>--%>
+<%--                <a href="#">아이라이너</a>--%>
+<%--            </li>--%>
+<%--            <li>--%>
+<%--                <a href="#">아이브로우</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
 
-    <div class="select-icon">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" name="q" class="select-icon3" style="font-size: small">
-        <input type="submit" value="검색" style="font-size: small">
-    </div>
-    <br> <br>
-
-    <div class="category">
-        <a href="#"><strong>Best 10</strong></a>
-        <br>
-
-        <!--   크 박스를 설명하는 레이블 요소입니다. for 속성의 값으로 "check-btn"을 설정하여 체크 박스와 연결합니다.
-        이렇게 함으로써 체크 박스를 클릭하는 동작과 레이블을 클릭하는 동작이 서로 연결되어 동일한 동작을 수행하도록 할 수 있습니다.      -->
-        <input id="check-btn" type="checkbox"/>
-        <label for="check-btn"><strong>SKIN</strong></label>
-        <br>
-        <ul class="menubars">
-            <br>
-            <li>
-                <a href="#">토너</a>
-            </li>
-            <li>
-                <a href="#">로션</a>
-            </li>
-            <li>
-                <a href="#">크림</a>
-            </li>
-        </ul>
-
-        <br>
-        <input id="check-btn1" type="checkbox"/>
-        <label for="check-btn1"><strong>FACE</strong></label>
-        <br>
-        <ul class="menubars1">
-            <br>
-            <li>
-                <a href="#">파운데이션</a>
-            </li>
-            <li>
-                <a href="#">쿠션</a>
-            </li>
-            <li>
-                <a href="#">파우더</a>
-            </li>
-            <li>
-                <a href="#">컨실러</a>
-            </li>
-        </ul>
-
-        <br>
-        <input id="check-btn2" type="checkbox"/>
-        <label for="check-btn2"> <strong>LIP</strong></label>
-        <br>
-        <ul class="menubars2">
-            <br>
-            <li>
-                <a href="#">립스틱</a>
-            </li>
-            <li>
-                <a href="#">틴트</a>
-            </li>
-        </ul>
-
-        <br>
-        <input id="check-btn3" type="checkbox"/>
-        <label for="check-btn3"><strong>EYE</strong></label>
-        <br>
-        <ul class="menubars3">
-            <br>
-            <li>
-                <a href="#">섀도우</a>
-            </li>
-            <li>
-                <a href="#">아이라이너</a>
-            </li>
-            <li>
-                <a href="#">아이브로우</a>
-            </li>
-        </ul>
-
-        <br><br>
-        <br><br>
+<%--        <br><br>--%>
+<%--        <br><br>--%>
 
 
-        <ul>
-            <li style="display:block">
-                <a href="/board/paging" style="font-size: 12px;">묻고 답하기</a>
-            </li>
-            <li style="display:block">
-                <a href="#" style="font-size: 12px;">공지사항</a>
-            </li>
-            <li style="display:block">
-                <a href="#" style="font-size: 12px;">고객후기</a>
-            </li>
-        </ul>
-    </div>
+<%--        <ul>--%>
+<%--            <li style="display:block">--%>
+<%--                <a href="/board/paging" style="font-size: 12px;">묻고 답하기</a>--%>
+<%--            </li>--%>
+<%--            <li style="display:block">--%>
+<%--                <a href="#" style="font-size: 12px;">공지사항</a>--%>
+<%--            </li>--%>
+<%--            <li style="display:block">--%>
+<%--                <a href="#" style="font-size: 12px;">고객후기</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
+<%--    </div>--%>
 
-</div>
-
+<%--</div>--%>
+<%@include file="../views/conponent/sidebar.jsp" %>
 <!--data-bs-interval="2000"sms 2초마다 슬라이드를 변경하게 해준다-->
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-indicators">
