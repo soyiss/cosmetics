@@ -27,7 +27,7 @@
     <p></p>
     상품설명<br><textarea type="text" name="productContents" maxlength=500></textarea><br>
     <p></p>
-    이미지 파일<input type="file" name="productFile" multiple> <br>
+    이미지 파일<input type="file" name="productFile"> <br>
     <p></p>
     <input type="submit" value="상품등록">
   </form>

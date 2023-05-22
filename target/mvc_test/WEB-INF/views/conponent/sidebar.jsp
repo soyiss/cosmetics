@@ -10,16 +10,6 @@
 
     <div class="cat">
         <ul>
-            <%--            <li>--%>
-            <%--                <a href="/member/login" style="font-size: 11px;"> LOGIN /</a>--%>
-            <%--            </li>--%>
-            <%--            <li>--%>
-            <%--                <a href="/member/save" style="font-size: 11px;">JOIN-US /</a>--%>
-            <%--            </li>--%>
-            <%--            <br>--%>
-            <%--            <li>--%>
-            <%--                <a href="/member/myPage?loginEmail=${sessionScope.loginEmail}" style="font-size: 11px;">MY PAGE /</a>--%>
-            <%--            </li>--%>
             <c:choose>
                 <c:when test="${sessionScope.loginEmail != null}">
                     <li>
@@ -38,11 +28,6 @@
 
                 </c:otherwise>
             </c:choose>
-            <%--            <c:if test="${sessionScope.loginEmail == 'admin'}">--%>
-            <%--                <li> <a href="/member/manager" style="font-size: 11px;">/ manager /</a> </li>--%>
-            <%--                <li> <a href="/board/boardList" class="left1" style="font-size: 11px;">M-List</a></li>--%>
-            <%--            </c:if>--%>
-
         </ul>
     </div>
 
@@ -54,7 +39,7 @@
     <br> <br>
 
     <div class="category">
-        <a href="#"><strong>Best 10</strong></a>
+        <a href="/product/paging"><strong>Best 10</strong></a>
         <br>
 
         <!--   크 박스를 설명하는 레이블 요소입니다. for 속성의 값으로 "check-btn"을 설정하여 체크 박스와 연결합니다.

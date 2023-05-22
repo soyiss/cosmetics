@@ -10,9 +10,12 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class ProductDTO {
+public class ProductsDTO {
+
 
     private Long id;
+
+    private Long productsId;
 
     // 상품이름
     private String productName;
@@ -29,6 +32,11 @@ public class ProductDTO {
     //상품 파일 여부
     private int fileAttached;
 
-    //상품 파일(다중)
-    private MultipartFile productFile;
+    //상품 파일(단일)
+//    private MultipartFile productFile;
+
+    private String originalFileName;
+    private String storedFileName;
+
+
 }

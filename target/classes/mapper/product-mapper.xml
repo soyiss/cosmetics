@@ -18,6 +18,7 @@
     <select id="findAll" resultType="product">
         select * from product_table;
     </select>
+
     <select id="findById" parameterType="Long" resultType="product">
         select * from product_table where id = #{id}
     </select>
@@ -31,6 +32,14 @@
 
     <select id="findFile" parameterType="Long" resultType="productFile">
         select * from product_file_table where productId=#{productId}
+    </select>
+
+    <select id="paging" parameterType="java.util.HashMap" resultType="products">
+        select * from product_table p, product_file_table f where p.id = f.productId and p.id=productId order by p.id desc Limit #{start}, #{Limit}
+    </select>
+
+    <select id="count" resultType="Integer">
+        select count(id) from product_table
     </select>
 
 

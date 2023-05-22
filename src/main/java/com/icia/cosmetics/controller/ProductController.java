@@ -1,12 +1,14 @@
 package com.icia.cosmetics.controller;
 
 import com.icia.cosmetics.dto.*;
+import com.icia.cosmetics.service.MemberService;
 import com.icia.cosmetics.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -78,6 +80,22 @@ public class ProductController {
         return "/products/productDetail";
     }
 
+    @GetMapping("/paging")
+    public String paging(@RequestParam(value = "page", required = false, defaultValue = "1") int page,Model model){
 
+        List<ProductsDTO> productsDTOList = null;
+        PageDTO pageDTO = null;
+        productsDTOList = productService.pagingList(page);
+        System.out.println("시시시시 productsDTOList = " + productsDTOList);
+        // 하단에 보여줄 페이지 번호 목록 데이터
+        pageDTO = productService.pagingParam(page);
+//         페이지에 들어가는 글 목록들
+        model.addAttribute("productList", productsDTOList);
+        // 하단에 보여줄 페이지 목록들
+        model.addAttribute("paging", pageDTO);
+
+        return "products/productPaging";
+
+    }
 
 }

@@ -30,8 +30,6 @@
 <%@include file="../conponent/header.jsp"%>
 <%@include file="../conponent/nav.jsp"%><br>
 <div id="section">
-
-    <p>상품번호를 누르시면 저장된 첨부파일이 보입니다</p>
     <table>
         <tr>
             <th>상품번호</th>
@@ -45,9 +43,18 @@
         </tr>
         <c:forEach items="${productList}" var="product">
             <tr>
-                <td>
-                    <a href="/product/detail?id=${product.id}"> ${product.id}</a>
-                </td>
+            <%-- 로그인한 사람이 관리자일때 상품 상세조회를 누를수 있어서 그 안에서 수정, 삭제가 가능하게 한다                 --%>
+                <c:choose>
+                    <c:when test="${sessionScope.loginEmail == 'admin'}">
+                        <td>
+                            <a href="/product/detail?id=${product.id}"> ${product.id}</a>
+                        </td>
+                    </c:when>
+                    <c:otherwise>
+                        <td> ${product.id} </td>
+                    </c:otherwise>
+                </c:choose>
+
                 <td>${product.productName}</td>
                 <td>${product.productPrice}</td>
                 <td>${product.productQu}</td>

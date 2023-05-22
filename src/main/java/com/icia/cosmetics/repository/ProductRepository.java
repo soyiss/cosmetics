@@ -2,11 +2,13 @@ package com.icia.cosmetics.repository;
 
 import com.icia.cosmetics.dto.ProductDTO;
 import com.icia.cosmetics.dto.ProductFileDTO;
+import com.icia.cosmetics.dto.ProductsDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class ProductRepository {
@@ -41,4 +43,15 @@ public class ProductRepository {
     public List<ProductFileDTO> findFile(Long productId) {
         return sql.selectList("Product.findFile",productId);
     }
+
+    public List<ProductsDTO> pagingList(Map<String, Integer> pagingParams) {
+        return sql.selectList("Product.paging",pagingParams);
+    }
+
+    public int productCount() {
+        return sql.selectOne("Product.count");
+    }
+
+
+
 }
