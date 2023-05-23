@@ -1,12 +1,14 @@
-<!doctype html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: user
+  Date: 2023-05-23
+  Time: 오전 9:10
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>FAQ</title>
     <link rel="stylesheet" href="/resources/css/sidebar.css">
     <style>
 
@@ -83,7 +85,7 @@
         }
 
 
-        </style>
+    </style>
 
 </head>
 <body>
@@ -222,13 +224,13 @@
     <h2>자주 묻는 질문</h2>
 
     <div class="container">
-        <img src="../image/기본%20프로필.png" alt="Avatar" style="width:60%; height: 60px; margin-top: 10px;">
+        <img src="../../../resources/image/기본%20프로필.png" alt="Avatar" style="width:60%; height: 60px; margin-top: 10px;">
         <p>[구매] 비회원 구매가 가능한가요?</p>
         <span class="time-right">질문1</span>
     </div>
 
     <div class="container darker">
-        <img src="../image/속눈썹.png" alt="Avatar" class="right" style="width:100%;">
+        <img src="../../../resources/image/속눈썹.png" alt="Avatar" class="right" style="width:100%;">
         <p>비회원으로 주문이 불가능합니다.<br>
             왼쪽 상단의 JOIN-US로 회원가입 해주시면 주문이 가능합니다.
         </p>
@@ -240,13 +242,13 @@
     <br>
 
     <div class="container">
-        <img src="../image/기본%20프로필.png" alt="Avatar" style="width:60%; height: 60px; margin-top: 10px;">
+        <img src="../../../resources/image/기본%20프로필.png" alt="Avatar" style="width:60%; height: 60px; margin-top: 10px;">
         <p>[배송] 배송비는 얼마인가요?</p>
         <span class="time-right">질문2</span>
     </div>
 
     <div class="container darker">
-        <img src="../image/속눈썹.png" alt="Avatar" class="right" style="width:100%;">
+        <img src="../../../resources/image/속눈썹.png" alt="Avatar" class="right" style="width:100%;">
         <p>기본 배송비는 2,500원 이며, 3만원 이상 구매시 무료 배송이 가능합니다.<br>
             단, 해외배송은 불가능합니다.
 
@@ -258,13 +260,13 @@
     <br>
     <br>
     <div class="container">
-        <img src="../image/기본%20프로필.png" alt="Avatar" style="width:60%; height: 60px; margin-top: 10px;">
+        <img src="../../../resources/image/기본%20프로필.png" alt="Avatar" style="width:60%; height: 60px; margin-top: 10px;">
         <p>[구매] 오프라인 매장은 어디에 있나요?</p>
         <span class="time-right">질문3</span>
     </div>
 
     <div class="container darker">
-        <img src="../image/속눈썹.png" alt="Avatar" class="right" style="width:100%;">
+        <img src="../../../resources/image/속눈썹.png" alt="Avatar" class="right" style="width:100%;">
         <br>
         <br>
         <br>

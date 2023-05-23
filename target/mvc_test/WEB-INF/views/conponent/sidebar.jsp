@@ -120,7 +120,7 @@
                 <a href="/board/paging" style="font-size: 12px;">묻고 답하기</a>
             </li>
             <li style="display:block">
-                <a href="#" style="font-size: 12px;">공지사항</a>
+                <a href="/product/productFAQ" style="font-size: 12px;">FAQ</a>
             </li>
             <li style="display:block">
                 <a href="#" style="font-size: 12px;">고객후기</a>
