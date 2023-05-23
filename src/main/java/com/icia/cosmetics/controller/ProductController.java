@@ -71,7 +71,7 @@ public class ProductController {
 
         if (productDTO.getFileAttached() == 1) {
             // 파일이 있는 게시글을 선택하면
-            List<ProductFileDTO> productFileDTO = productService.findFile(id);
+            ProductFileDTO productFileDTO = productService.findFile(id);
             System.out.println("하하 productFileDTO = " + productFileDTO);
             model.addAttribute("productFileList", productFileDTO);
             System.out.println("productFileList = " + productFileDTO);
@@ -98,4 +98,22 @@ public class ProductController {
 
     }
 
+    @GetMapping("/detailGo")
+    public String DetailGo(@RequestParam("id") Long id,
+                           @RequestParam(value = "page", required = false, defaultValue = "1") int page,Model model){
+        ProductDTO productDTO = productService.findById(id);
+        model.addAttribute("product", productDTO);
+        model.addAttribute("page", page);
+        if(productDTO.getFileAttached() == 1){
+            ProductFileDTO productFileDTO = productService.findFile(id);
+            model.addAttribute("productFile", productFileDTO);
+            System.out.println("파파일 productFileDTO = " + productFileDTO);
+        }
+        return "/products/detailGo";
+    }
+
+    @GetMapping("/productFAQ")
+    public String FAQ(){
+        return "/products/productFAQ";
+    }
 }

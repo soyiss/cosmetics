@@ -82,7 +82,7 @@ public class ProductService {
         productRepository.update(productDTO);
     }
 
-    public List<ProductFileDTO> findFile(Long productId) {
+    public ProductFileDTO findFile(Long productId) {
         return productRepository.findFile(productId);
     }
 

@@ -17,8 +17,6 @@ body {
     padding: 0 50px;
     margin-top: 35px;
     margin-left: 40px;
-    height: 100%;
-
     /*
     position: fixed;는 사이드바를 페이지 내에서 고정 위치로 설정합니다. 따라서 스크롤이 움직여도 사이드바는 항상 고정된 위치에 있게 됩니다.
     */

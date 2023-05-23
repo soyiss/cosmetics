@@ -40,8 +40,8 @@ public class ProductRepository {
         sql.update("Product.update",productDTO);
     }
 
-    public List<ProductFileDTO> findFile(Long productId) {
-        return sql.selectList("Product.findFile",productId);
+    public ProductFileDTO findFile(Long productId) {
+        return sql.selectOne("Product.findFile",productId);
     }
 
     public List<ProductsDTO> pagingList(Map<String, Integer> pagingParams) {
