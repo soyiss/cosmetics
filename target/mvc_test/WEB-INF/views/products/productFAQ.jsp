@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>FAQ</title>
@@ -305,11 +307,21 @@
         </p>
         <span class="time-left">답변3</span>
     </div>
+  
     <br>
     <br>
-    <br>
-    <br>
+
+    <c:if test="${sessionScope.loginEmail == 'admin'}">
+
+        <button onclick="FAQ_save()" style="margin-bottom: 50px;">FAQ 작성</button>
+
+    </c:if>
 </div>
 
 </body>
+<script>
+    const FAQ_save = () => {
+      location.href="/product/FAQ_save";
+    }
+</script>
 </html>

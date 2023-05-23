@@ -116,4 +116,9 @@ public class ProductController {
     public String FAQ(){
         return "/products/productFAQ";
     }
+
+    @GetMapping("FAQ_save")
+    public String FAQSave(){
+        return "redirect:/product/productFAQ";
+    }
 }
