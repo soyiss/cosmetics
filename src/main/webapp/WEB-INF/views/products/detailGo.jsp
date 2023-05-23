@@ -59,7 +59,7 @@
     <strong>판매가</strong> <span id="calculatedPrice"></span><br>
     <strong>할인가</strong> <span id="discountedPrice"></span>원 <span style="color: red">전품목 10%할인</span><br>
     <br>
-    <button class="btn default" onclick="cart()">CART</button>
+    <button class="btn default" onclick="cart('${product.id}')">CART</button>
     </p>
 </div>
 <script>
@@ -80,13 +80,13 @@
     const discountedPriceElement = document.getElementById("discountedPrice");
     discountedPriceElement.textContent = discountedPrice;
 
-    const cart = () => {
+    const cart = (id) => {
         if(confirm("장바구니에 추가하시겠습니까?")){
             if(${sessionScope.loginEmail == null}){
                 alert("로그인 해주시길 바랍니다")
                 location.href="/member/login";
-            }{
-                location.href="/product/cart";
+            }else{
+                location.href="/cart/cart?id="+id;
             }
 
         }else {

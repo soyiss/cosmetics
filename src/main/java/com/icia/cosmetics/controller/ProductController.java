@@ -112,10 +112,6 @@ public class ProductController {
         return "/products/detailGo";
     }
 
-    @GetMapping("/cart")
-    public String cartForm(){
-        return "/products/productCart";
-    }
 
     @GetMapping("/productFAQ")
     public String FAQ(){
