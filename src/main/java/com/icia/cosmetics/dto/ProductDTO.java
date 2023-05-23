@@ -24,6 +24,8 @@ public class ProductDTO {
     private int productQu;
 
     //상품 설명
+    private String productContent;
+    //상품 상세설명
     private String productContents;
 
     //상품 파일 여부

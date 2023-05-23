@@ -58,7 +58,7 @@
                 <td>${product.productName}</td>
                 <td>${product.productPrice}</td>
                 <td>${product.productQu}</td>
-                <td>${product.productContents}</td>
+                <td>${product.productContent}</td>
                 <td>${product.fileAttached}</td>
                 <td><button onclick="product_update('${product.id}')">수정</button></td>
                 <td><button onclick="product_delete('${product.id}')">삭제</button></td>

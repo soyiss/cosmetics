@@ -78,7 +78,7 @@
                 </c:if>
                 <h1>${product.productName}</h1>
                 <p class="price">${String.format("%,d", product.productPrice)}원</p>
-                <p>${product.productContents}</p>
+                <p>${product.productContent}</p>
                 <p>
                     <button onclick="detail_go('${product.id}')">Detail Click</button>
                 </p>

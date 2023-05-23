@@ -6,8 +6,8 @@
 <mapper namespace="Product">
 
     <insert id="save" parameterType="product" useGeneratedKeys="true" keyProperty="id">
-        insert into product_table(productName, productPrice, productQu, productContents, fileAttached)
-        values (#{productName}, #{productPrice}, #{productQu}, #{productContents},#{fileAttached})
+        insert into product_table(productName, productPrice, productQu, productContent,productContents, fileAttached)
+        values (#{productName}, #{productPrice}, #{productQu}, #{productContent}, #{productContents},#{fileAttached})
     </insert>
 
     <insert id="saveFile" parameterType="productFile">

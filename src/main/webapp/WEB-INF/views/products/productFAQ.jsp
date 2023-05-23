@@ -307,7 +307,7 @@
         </p>
         <span class="time-left">답변3</span>
     </div>
-
+    <p>더 궁금하신점은 묻고 답하기에 질문해주세요!</p>
     <br>
     <br>
 

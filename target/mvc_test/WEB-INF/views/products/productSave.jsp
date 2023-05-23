@@ -25,7 +25,9 @@
     <p></p>
     상품수량<br><input type="text" name="productQu"><br>
     <p></p>
-    상품설명<br><textarea type="text" name="productContents" maxlength=500></textarea><br>
+    상품설명<br><input type="text" name="productContent" maxlength="300"><br>
+    <p></p>
+    상품 상세설명<br><textarea type="text" name="productContents" maxlength=500></textarea><br>
     <p></p>
     이미지 파일<input type="file" name="productFile"> <br>
     <p></p>

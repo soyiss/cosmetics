@@ -28,6 +28,7 @@
                 <th>상품가격</th>
                 <th>상품수량</th>
                 <th>상품설명</th>
+                <th>상품 상세설명</th>
                 <th>파일여부</th>
             </tr>
 
@@ -43,6 +44,9 @@
                     </td>
                     <td>
                         <input type="text" name="productQu" value="${product.productQu}" >
+                    </td>
+                    <td>
+                        <input type="text" name="productContent" value="${product.productContent}" >
                     </td>
                     <td>
                         <input type="text" name="productContents" value="${product.productContents}" >

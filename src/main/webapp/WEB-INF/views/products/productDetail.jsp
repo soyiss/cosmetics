@@ -59,6 +59,10 @@
     </tr>
     <tr>
       <th>상품설명</th>
+      <td>${product.productContent}</td>
+    </tr>
+    <tr>
+      <th>상품 상세설명</th>
       <td>${product.productContents}</td>
     </tr>
     <tr>
@@ -72,11 +76,11 @@
       <tr>
         <th>image</th>
         <td>
-          <c:forEach items="${productFileList}" var="productFile">
+
             <%--    ${pageContext.request.contextPath}는 현재 프로젝트의 경로에 접근한다(그냥 기본적으로 써야되는 식이다)            --%>
-            <img src="${pageContext.request.contextPath}/upload/${productFile.storedFileName}" alt=""
+            <img src="${pageContext.request.contextPath}/upload/${productFileList.storedFileName}" alt=""
                  width="100" height="100">
-          </c:forEach>
+
         </td>
       </tr>
     </c:if>
