@@ -14,4 +14,8 @@ public class CartRepository {
     public void save(CartDTO cartDTO) {
         sql.insert("Cart.save",cartDTO);
     }
+
+    public void updateCart(Long id) {
+        sql.update("Cart.updateCart", id);
+    }
 }

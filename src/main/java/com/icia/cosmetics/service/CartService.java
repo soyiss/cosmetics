@@ -14,4 +14,8 @@ public class CartService {
     public void save(CartDTO cartDTO) {
         cartRepository.save(cartDTO);
     }
+
+    public void updateCart(Long id) {
+        cartRepository.updateCart(id);
+    }
 }

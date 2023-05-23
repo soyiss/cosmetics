@@ -27,7 +27,10 @@ public class CartController {
         CartDTO cartDTO = new CartDTO();
         cartDTO.setMemberId(memberDTO.getId());
         cartDTO.setProductId(id);
+        cartService.updateCart(id);
         cartService.save(cartDTO);
+        model.addAttribute(cartDTO);
+//        여기서 cartDTO에 찍어보면 아직 save에 저장되지 않았으니까 id와 수량이 null과 0이 뜬다.
         System.out.println("cartDTO = " + cartDTO);
         return "/carts/cartSave";
     }

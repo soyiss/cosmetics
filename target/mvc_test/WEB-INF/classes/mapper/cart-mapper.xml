@@ -5,8 +5,12 @@
 
 <mapper namespace="Cart">
     <insert id="save" parameterType="cart">
-        insert into cart_table(memberId, productId)
-        values (#{memberId}, #{productId})
+        insert into cart_table(memberId, productId,cartQu)
+        values (#{memberId}, #{productId},#{cartQu})
     </insert>
+
+    <update id="updateCart" parameterType="Long">
+        update cart_table set cartQu=cartQu+1 where productId=#{id}
+    </update>
 
 </mapper>
