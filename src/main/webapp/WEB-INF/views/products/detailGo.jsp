@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -41,8 +43,16 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .default {background-color: #e7e7e7; color: black;} /* Gray */
-        .default:hover {background: #ddd;}
+
+        .default {
+            background-color: #e7e7e7;
+            color: black;
+        }
+
+        /* Gray */
+        .default:hover {
+            background: #ddd;
+        }
     </style>
 </head>
 <body>
@@ -59,7 +69,15 @@
     <strong>판매가</strong> <span id="calculatedPrice"></span><br>
     <strong>할인가</strong> <span id="discountedPrice"></span>원 <span style="color: red">전품목 10%할인</span><br>
     <br>
-    <button class="btn default" onclick="cart('${product.id}')">CART</button>
+    <form action="/cart/cart" name="form1" method="post" onsubmit="return submitForm('${product.id}')">
+        <input type="hidden" name="id" value="${product.id}">
+        <select name="productQu">
+            <c:forEach begin="1" end="10" var="i">
+                <option value="${i}">${i}</option>
+            </c:forEach>
+        </select>&nbsp;개
+        <input type="submit" value="cart in">
+    </form>
     </p>
 </div>
 <script>
@@ -80,18 +98,22 @@
     const discountedPriceElement = document.getElementById("discountedPrice");
     discountedPriceElement.textContent = discountedPrice;
 
-    const cart = (id) => {
-        if(confirm("장바구니에 추가하시겠습니까?")){
-            if(${sessionScope.loginEmail == null}){
-                alert("로그인 해주시길 바랍니다")
-                location.href="/member/login";
-            }else{
-                location.href="/cart/cart?id="+id;
-            }
 
-        }else {
+    const submitForm = (id) => {
+        const productQu = document.getElementsByName("productQu")[0].value;
+        if (confirm("장바구니에 추가하시겠습니까?")) {
+            if ('${sessionScope.loginEmail}' == null) {
+                alert("로그인 해주시길 바랍니다")
+                location.href = "/member/login";
+            } else {
+                location.href = "/cart/cart?productId=" + id + "&productQu=" + productQu;
+            }
+        } else {
             location.reload();
         }
+    };
+
+
     }
 
 </script>
