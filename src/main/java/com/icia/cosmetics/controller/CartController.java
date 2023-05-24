@@ -30,6 +30,7 @@ public class CartController {
 //        cartDTO안에는 상품 수량과 상품 아이디가 있다
         String loginEmail = (String) session.getAttribute("loginEmail");
         MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
+        System.out.println("널이니,. memberDTO = " + memberDTO);
         cartDTO.setMemberId(memberDTO.getId());
         System.out.println("하하 22 cartDTO = " + cartDTO);
         // 장바구니에 기존 상품이 있는지 검사
@@ -43,7 +44,7 @@ public class CartController {
         }else{
             cartService.updateCart(cartDTO);
         }
-        return "redirect:/cart/cartList";
+        return "redirect:/cart/cart";
     }
 
     // 장바구니 목록 띄우기

@@ -6,7 +6,7 @@
 <mapper namespace="Cart">
 <!--  장바구니에 동일한 상품이 있나 확인  -->
     <select id="countCart" parameterType="java.util.Map" resultType="int">
-        select * from cart_table where memberId=#{memberId} and productId=#{productId}
+        select count(*) from cart_table where memberId=#{memberId} and productId=#{productId}
     </select>
 <!--    장바구니에 동일한 상품이 존재하면 수정-->
     <update id="updateCart" parameterType="cart">
@@ -19,15 +19,16 @@
     </insert>
 <!--    장바구니 리스트-->
     <select id="listCart" parameterType="Long" resultType="cart">
-        select c.id,c.memberId,p.id,m.memberName,p.productName,c.productQu,p.productPrice,(productPrice * productQu)money
+        select c.id,c.memberId,p.id,m.memberName,p.productName,c.productQu,p.productPrice,(p.productPrice * c.productQu)money
         from member_table m, product_table p, cart_table c
         where m.id=c.memberId and p.id=c.productId and c.memberId=#{memberId}
         order by c.id
     </select>
 <!--    장바구니 전체 금액-->
     <select id="sumMoney" parameterType="Long" resultType="int">
-        select infull(sum(productPrice * productQu), 0) as money
-        from cart_table c, product_table p
-        where c.productId = p.id and c.memberId = #{memberId}
+        SELECT COALESCE(SUM(p.productPrice * c.productQu), 0) AS money
+        FROM cart_table c, product_table p
+        WHERE c.productId = p.id AND c.memberId = #{memberId}
+
     </select>
 </mapper>

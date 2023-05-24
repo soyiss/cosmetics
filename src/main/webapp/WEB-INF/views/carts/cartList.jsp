@@ -24,7 +24,7 @@
     <c:choose>
         <c:when test="${map.count == 0}">장바구니가 비어있습니다.</c:when>
         <c:otherwise>
-            <form action="/cart/update" name="form1" id="form1" method="post">
+            <form action="#" name="form1" id="form1" method="post">
                 <table>
                     <tr>
                         <th>상품명</th>

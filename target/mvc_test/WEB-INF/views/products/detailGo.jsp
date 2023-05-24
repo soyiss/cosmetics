@@ -111,9 +111,6 @@
         } else {
             location.reload();
         }
-    };
-
-
     }
 
 </script>
