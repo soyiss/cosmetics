@@ -100,13 +100,16 @@
 
 
     const submitForm = (id) => {
+        console.log("${product.id}"); // product.id 값을 확인하기 위한 출력문 추가
+        console.log(id); // id 값을 확인하기 위한 출력문 추가
+
         const productQu = document.getElementsByName("productQu")[0].value;
         if (confirm("장바구니에 추가하시겠습니까?")) {
             if ('${sessionScope.loginEmail}' == null) {
                 alert("로그인 해주시길 바랍니다")
                 location.href = "/member/login";
             } else {
-                location.href = "/cart/cart?productId=" + id + "&productQu=" + productQu;
+                location.href = "/cart/cart?id=" + id + "&productQu=" + productQu;
             }
         } else {
             location.reload();

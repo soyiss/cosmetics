@@ -32,6 +32,7 @@ public class CartController {
         MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
         System.out.println("널이니,. memberDTO = " + memberDTO);
         cartDTO.setMemberId(memberDTO.getId());
+        cartDTO.setProductId(cartDTO.getId());
         System.out.println("하하 22 cartDTO = " + cartDTO);
         // 장바구니에 기존 상품이 있는지 검사
         int count = cartService.countCart(cartDTO.getProductId(),cartDTO.getMemberId());
