@@ -18,7 +18,7 @@
                     <li><a href="/member/logout" style="font-size: 11px;">LOGOUT </a></li>
                     <br>
                     <li>
-                        <a href="#" style="font-size: 11px;">CART </a>
+                        <a href="/cart/cart" style="font-size: 11px;">CART </a>
                     </li>
 
                 </c:when>
