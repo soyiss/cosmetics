@@ -64,6 +64,15 @@
             margin: 10px;
         }
 
+        .min{
+            border: solid 1px grey;
+            border-radius: 5px;
+            padding: 10px 20px; /* 버튼 내부 여백 설정 */
+            background-color: #ececec; /* 버튼 배경색 설정 */
+            color: #525151; /* 버튼 텍스트 색상 설정 */
+            cursor: pointer; /* 커서를 손가락 모양으로 변경 */
+        }
+
     </style>
 </head>
 <body>
@@ -77,7 +86,7 @@
             4. 배송료
             5. 주문상품 전체금액(3+4) --%>
     <div class="container">
-        <h2 style="margin-left: 52px;>장바구니</h2><br>
+        <h2 style="margin-left: 52px;">장바구니</h2><br>
         <c:choose>
             <c:when test="${map.count == 0}">장바구니가 비어있습니다.</c:when>
             <c:otherwise>
@@ -152,14 +161,15 @@
                             </th>
                         </tr>
                     </table>
-
                 </form>
+                <button type="submit" id="sell" style="margin-left: 52px; margin-top: 10px">주문하기</button>
             </c:otherwise>
         </c:choose>
         <div style="display: flex; justify-content: center; margin-top: 20px;">
-            <button onclick="gogo()">상품목록</button>
+            <button onclick="gogo()"class="min">상품목록</button>
         </div>
     </div>
+
 </div>
 </body>
 <script>

@@ -90,8 +90,10 @@
     // const calculatedPriceElement = document.getElementById("calculatedPrice");
     // calculatedPriceElement.textContent = new Intl.NumberFormat().format(calculatedPrice) + "원";
     const calculatedPriceElement = document.getElementById("calculatedPrice");
-    const formattedPrice = new Intl.NumberFormat().format(calculatedPrice) + "원";
-    calculatedPriceElement.innerHTML = formattedPrice.replace(/\d+/, "<span style='text-decoration: line-through'>$&</span>");
+    // const formattedPrice = new Intl.NumberFormat().format(calculatedPrice) + "원";
+    // calculatedPriceElement.innerHTML = formattedPrice.replace(/\d+/, "<span style='text-decoration: line-through'>$&</span>");
+    const formattedPrice = calculatedPrice + "원";
+    calculatedPriceElement.innerHTML = "<span style='text-decoration: line-through'>" + formattedPrice + "</span>";
 
 
     //할인가
