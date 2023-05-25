@@ -31,4 +31,12 @@
         WHERE c.productId = p.id AND c.memberId = #{memberId}
 
     </select>
+<!--    장바구니 수량을 변경후 수정을 누르면 수정-->
+    <update id="modifyCart" parameterType="cart">
+        update cart_table set productQu=#{productQu} where productId=#{productId} and memberId=#{memberId}
+    </update>
+<!--    장바구니 삭제-->
+    <delete id="delete" parameterType="long">
+        delete FROM cart_table where id=#{id}
+    </delete>
 </mapper>

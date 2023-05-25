@@ -38,4 +38,12 @@ public class CartService {
     public int sumMoney(Long memberId) {
         return cartRepository.sumMoney(memberId);
     }
+
+    public void modifyCart(CartDTO cartDTO) {
+        cartRepository.modifyCart(cartDTO);
+    }
+
+    public void delete(long id) {
+        cartRepository.delete(id);
+    }
 }

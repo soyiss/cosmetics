@@ -43,4 +43,12 @@ public class CartRepository {
         return sql.selectOne("Cart.sumMoney",memberId);
 
     }
+
+    public void modifyCart(CartDTO cartDTO) {
+        sql.update("Cart.modifyCart",cartDTO);
+    }
+
+    public void delete(long id) {
+        sql.delete("Cart.delete",id);
+    }
 }

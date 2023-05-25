@@ -24,7 +24,7 @@
     <c:choose>
         <c:when test="${map.count == 0}">장바구니가 비어있습니다.</c:when>
         <c:otherwise>
-            <form action="#" name="form1" id="form1" method="post">
+            <form action="/cart/update" name="form1" id="form1" method="post" onsubmit="updateGo('${row.productId}')">
                 <table>
                     <tr>
                         <th>상품명</th>
@@ -47,7 +47,9 @@
                             <td style="width: 100px; text-align: right">
                                 <fmt:formatNumber pattern="###,###,###" value="${row.money}"/>
                             </td>
-                            <td><a href="#">삭제</a></td>
+                                <%--  + 기호는 문자열을 연결하는 연산자이지만, JSP 표현 언어에서는 ${}로 변수 값을 가져올 수 있습니다. --%>
+                            <td><a href="/cart/delete?id=${row.id}">상품 삭제</a>
+                            </td>
                         </tr>
                     </c:forEach>
                     <tr>
@@ -62,7 +64,7 @@
                     </tr>
                 </table>
                 <input type="hidden" name="count" value="${map.count}">
-                <button type="submit" id="btnUpdate">수정</button>
+                <button type="submit" id="btnUpdate">수량변경</button>
             </form>
         </c:otherwise>
     </c:choose>
@@ -73,5 +75,12 @@
     const gogo = () => {
       location.href="/product/paging";
     }
+    
+    const updateGo = (productId) => {
+        const productQu = document.getElementsByName("productQu")[0].value;
+        location.href = "/cart/cart?productId=" + productId + "&productQu=" + productQu;
+      
+    }
+
 </script>
 </html>
