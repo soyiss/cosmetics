@@ -11,16 +11,20 @@
 <head>
   <title>Title</title>
   <link rel="stylesheet" href="/resources/css/main.css">
+  <link rel="stylesheet" href="/resources/css/sidebar.css">
   <link rel="stylesheet" href="/resources/image/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <script src="https://kit.fontawesome.com/e3b6bf5ae9.js" crossorigin="anonymous"></script>
   <style>
     .container{
+      background-color: white;
       margin: 0 auto;
-      margin-top: 35px;
+      margin-top: 100px;
       border: solid 1px dimgrey;
       max-width: 600px; /* 원하는 최대 너비로 조절합니다 */
+      width: 700px;
       padding: 20px; /* 원하는 패딩 값을 적용합니다 */
+      padding-right: 0;
     }
     hr {
       width: 85%; /* 구분선의 너비를 조절합니다 */
@@ -31,12 +35,21 @@
       border: solid 1px #3a3939;
     }
 
+    #section {
+      /* section을 브라우저의 가운데로 정렬합니다. */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   </style>
 </head>
 <body>
 
-<%@include file="../conponent/header.jsp" %>
-<%@include file="../conponent/nav.jsp" %>
+<%--<%@include file="../conponent/header.jsp" %>--%>
+<%--<%@include file="../conponent/nav.jsp" %>--%>
+
+<%@include file="../conponent/sidebar.jsp" %>
 <div id="section">
   <div class="container">
 
@@ -86,15 +99,37 @@
 </div>
 
 
-<%@include file="../conponent/footer.jsp" %>
+<%--<%@include file="../conponent/footer.jsp" %>--%>
 </body>
 <script>
   const update = () => {
-    location.href = "/member/updatePass";
+    const userInput = prompt("비밀번호 확인:","현재 비밀번호를 입력하세요");
+    // const inputPass = document.getElementById("memberPassword").value;
+    // 서버에 저장되있는 비밀번호
+    const DBPass = '${member.memberPassword}';
+
+    if(userInput == DBPass){
+      location.href="/member/updatePass";
+    }else{
+      alert("비밀번호가 일치하지 않습니다")
+      location.reload();
+    }
   }
 
+
   const member_delete = () => {
-    location.href = "/member/deletePass";
+    const userInput = prompt("비밀번호 확인:","현재 비밀번호를 입력하세요");
+    // const inputPass = document.getElementById("memberPassword").value;
+    // 서버에 저장되있는 비밀번호
+    const DBPass = '${member.memberPassword}';
+
+    if(userInput == DBPass){
+      location.href = "/member/deletePass";
+    }else{
+      alert("비밀번호가 일치하지 않습니다")
+      location.reload();
+    }
+
   }
 
   const product_save = () => {

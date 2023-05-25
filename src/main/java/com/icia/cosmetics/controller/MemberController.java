@@ -60,8 +60,9 @@ public class MemberController {
         boolean loginResult = memberService.login(memberDTO);
         // loginResult가 true이면
         if(loginResult){
+
             session.setAttribute("loginEmail", memberDTO.getMemberEmail());
-            return "redirect:/board/paging";
+            return "redirect:/";
         }else{
             return "/membership/memberLoginError";
         }
@@ -78,15 +79,15 @@ public class MemberController {
         return "/membership/memberMy";
     }
 
-    @GetMapping("/updatePass")
-    public String updateForm(HttpSession session, Model model){
-        String loginEmail = (String)session.getAttribute("loginEmail");
-        MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
-        model.addAttribute("member", memberDTO);
-        return "/membership/memberUpdatePass";
-    }
+//    @GetMapping("/updatePass")
+//    public String updateForm(HttpSession session, Model model){
+//        String loginEmail = (String)session.getAttribute("loginEmail");
+//        MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
+//        model.addAttribute("member", memberDTO);
+//        return "/membership/memberUpdatePass";
+//    }
 
-    @PostMapping("/updatePass")
+    @GetMapping("/updatePass")
     public String updatePass(HttpSession session, Model model){
         String loginEmail = (String)session.getAttribute("loginEmail");
         MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
@@ -108,14 +109,14 @@ public class MemberController {
         return "redirect:/";
     }
 
+//    @GetMapping("/deletePass")
+//    public String deleteForm(HttpSession session, Model model){
+//        String loginEmail = (String)session.getAttribute("loginEmail");
+//        MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
+//        model.addAttribute("member", memberDTO);
+//        return "/membership/deletePass";
+//    }
     @GetMapping("/deletePass")
-    public String deleteForm(HttpSession session, Model model){
-        String loginEmail = (String)session.getAttribute("loginEmail");
-        MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
-        model.addAttribute("member", memberDTO);
-        return "/membership/deletePass";
-    }
-    @PostMapping("/deletePass")
     public String delete(HttpSession session, Model model){
         String loginEmail = (String)session.getAttribute("loginEmail");
         MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);

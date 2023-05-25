@@ -74,4 +74,11 @@ public class CartController {
         return "/carts/cartList";
     }
 
+    @PostMapping("/update")
+    public String update(@ModelAttribute CartDTO cartDTO, HttpSession session){
+//        cartDTO안에는 상품 아이디와 productQu가 들어있음
+        System.out.println("우우우우cartDTO = " + cartDTO);
+        return "/";
+    }
+
 }

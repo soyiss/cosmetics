@@ -10,9 +10,24 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/sidebar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <style>
+        #section {
+            /* section을 브라우저의 가운데로 정렬합니다. */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+            margin-top: 80px;
+            border: solid 1px dimgrey;
+            width: 700px;
+            padding: 25px;
+        }
 
         table {
             border: solid 1px black;
@@ -25,39 +40,44 @@
 </head>
 <body>
 
-<%@include file="../conponent/header.jsp" %>
-<%@include file="../conponent/nav.jsp" %>
+<%--<%@include file="../conponent/header.jsp" %>--%>
+<%--<%@include file="../conponent/nav.jsp" %>--%>
+
+<%@include file="../conponent/sidebar.jsp" %>
 <div id="section">
-    <form action="/member/update" method="post" name="updateForm">
-        회원번호(수정 불가능) <br><input type="text" name="id" value="${member.id}" readonly> <br><br>
-        이메일(수정 불가능) <br><input type="text" name="memberEmail" value="${member.memberEmail}" readonly
-                               placeholder="이메일(수정 불가능)"> <br><br>
-        비밀번호(수정 가능) <br><input type="text" name="memberPassword" id="member-password1" value="${member.memberPassword}"
-                               placeholder="비밀번호(수정 가능)" onblur="pass_c()"><br>
-        <p id="pass-rule1"></p>
+    <div class="container">
+        <h1>회원 정보수정</h1>
+        <form action="/member/update" method="post" name="updateForm">
+            회원번호(수정 불가능) <br><input type="text" name="id" value="${member.id}" readonly> <br><br>
+            이메일(수정 불가능) <br><input type="text" name="memberEmail" value="${member.memberEmail}" readonly
+                                   placeholder="이메일(수정 불가능)"> <br><br>
+            비밀번호(수정 가능) <br><input type="text" name="memberPassword" id="member-password1"
+                                   value="${member.memberPassword}"
+                                   placeholder="비밀번호(수정 가능)" onblur="pass_c()"><br>
+            <p id="pass-rule1"></p>
 
-        <br><br>
-        이름(수정 가능) <br><input type="text" name="memberName" value="${member.memberName}" placeholder="이름(수정 가능)">
-        <br><br>
-        전화번호(수정 가능) <br><input type="text" name="memberMobile" id="member-mobile1" value="${member.memberMobile}"
-                               placeholder="전화번호(수정 가능)" onblur="mobile_c()"><br>
-        <p id="mobile-rule1"></p>
-        <br><br>
-        <%--    <input type="text" name="memberAddress" value="${member.memberAddress}" placeholder="주소(수정 가능)" size="100" maxlength="100" readonly><br>--%>
-        <br><br>
-        주소(수정 가능)<br>
-        <input type="hidden" name="memberAddress" id="memberAddress">
-        <input type="text" id="sample6_postcode" placeholder="우편번호">
-        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-        <input type="text" id="sample6_address" placeholder="주소"><br>
-        <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-        <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+            <br>
+            이름(수정 가능) <br><input type="text" name="memberName" value="${member.memberName}" placeholder="이름(수정 가능)">
+            <br><br>
+            전화번호(수정 가능) <br><input type="text" name="memberMobile" id="member-mobile1" value="${member.memberMobile}"
+                                   placeholder="전화번호(수정 가능)" onblur="mobile_c()"><br>
+            <p id="mobile-rule1"></p>
+            <br>
+            <%--    <input type="text" name="memberAddress" value="${member.memberAddress}" placeholder="주소(수정 가능)" size="100" maxlength="100" readonly><br>--%>
+            주소(수정 가능)<br>
+            <input type="hidden" name="memberAddress" id="memberAddress">
+            <input type="text" id="sample6_postcode" placeholder="우편번호">
+            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+            <input type="text" id="sample6_address" placeholder="주소"><br>
+            <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+            <input type="text" id="sample6_extraAddress" placeholder="참고항목">
 
-        <input type="button" onclick="update_check()" value="수정">
-    </form>
+            <input type="button" onclick="update_check()" value="수정">
+        </form>
+    </div>
 </div>
 
-<%@include file="../conponent/footer.jsp" %>
+<%--<%@include file="../conponent/footer.jsp" %>--%>
 </body>
 <script>
     const pass_c = () => {

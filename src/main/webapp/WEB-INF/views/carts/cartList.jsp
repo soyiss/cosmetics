@@ -24,7 +24,7 @@
     <c:choose>
         <c:when test="${map.count == 0}">장바구니가 비어있습니다.</c:when>
         <c:otherwise>
-            <form action="#" name="form1" id="form1" method="post">
+            <form action="/cart/update" name="form1" id="form1" method="post" onsubmit="updateGo('${row.productId}')">
                 <table>
                     <tr>
                         <th>상품명</th>
@@ -72,6 +72,12 @@
 <script>
     const gogo = () => {
       location.href="/product/paging";
+    }
+    
+    const updateGo = (productId) => {
+        const productQu = document.getElementsByName("productQu")[0].value;
+        location.href = "/cart/cart?productId=" + productId + "&productQu=" + productQu;
+      
     }
 </script>
 </html>

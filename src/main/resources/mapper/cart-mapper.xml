@@ -19,7 +19,7 @@
     </insert>
 <!--    장바구니 리스트-->
     <select id="listCart" parameterType="Long" resultType="cart">
-        select c.id,c.memberId,p.id,m.memberName,p.productName,c.productQu,p.productPrice,(p.productPrice * c.productQu)money
+        select c.id,c.memberId,c.productId,m.memberName,p.productName,c.productQu,p.productPrice,(p.productPrice * c.productQu)money
         from member_table m, product_table p, cart_table c
         where m.id=c.memberId and p.id=c.productId and c.memberId=#{memberId}
         order by c.id
