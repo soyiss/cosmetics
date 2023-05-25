@@ -108,8 +108,10 @@
             if ('${sessionScope.loginEmail}' == null) {
                 alert("로그인 해주시길 바랍니다")
                 location.href = "/member/login";
+                return false;
             } else {
                 location.href = "/cart/cart?id=" + id + "&productQu=" + productQu;
+                return true;
             }
         } else {
             location.reload();

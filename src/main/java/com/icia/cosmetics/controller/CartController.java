@@ -31,21 +31,28 @@ public class CartController {
         String loginEmail = (String) session.getAttribute("loginEmail");
         MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
         System.out.println("널이니,. memberDTO = " + memberDTO);
-        cartDTO.setMemberId(memberDTO.getId());
-        cartDTO.setProductId(cartDTO.getId());
-        System.out.println("하하 22 cartDTO = " + cartDTO);
-        // 장바구니에 기존 상품이 있는지 검사
-        int count = cartService.countCart(cartDTO.getProductId(), cartDTO.getMemberId());
-        // 삼항조건 연산자 사용
-        // count가 0인지 확인하고 0인 경우(서버에 해당 상품이 있는경우) cartService.updateCart(cartDTO)가 실행해서 수정해줌
-        // count가 0이 아닌경우(서버에 해당 상품이 없는경우) cartService.insert(cartDTO)가 실행되서 추가해줌
+
+        if(loginEmail != null){
+            cartDTO.setMemberId(memberDTO.getId());
+            cartDTO.setProductId(cartDTO.getId());
+            System.out.println("하하 22 cartDTO = " + cartDTO);
+            // 장바구니에 기존 상품이 있는지 검사
+            int count = cartService.countCart(cartDTO.getProductId(), cartDTO.getMemberId());
+            // 삼항조건 연산자 사용
+            // count가 0인지 확인하고 0인 경우(서버에 해당 상품이 있는경우) cartService.updateCart(cartDTO)가 실행해서 수정해줌
+            // count가 0이 아닌경우(서버에 해당 상품이 없는경우) cartService.insert(cartDTO)가 실행되서 추가해줌
 //        count == 0 ? cartService.updateCart(cartDTO) : cartService.insert(cartDTO);
-        if (count == 0) {
-            cartService.insert(cartDTO);
-        } else {
-            cartService.updateCart(cartDTO);
+            if (count == 0) {
+                cartService.insert(cartDTO);
+            } else {
+                cartService.updateCart(cartDTO);
+            }
+            return "redirect:/cart/cart";
+        }else{
+            return "/membership/memberLogin";
         }
-        return "redirect:/cart/cart";
+
+
     }
 
     // 장바구니 목록 띄우기
